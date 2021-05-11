@@ -31,10 +31,10 @@ User.init(
             defaultValue: false,
         },
         password: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             validate: {
-                len: [4]
+                len: [6]
             }
         },
         // Unix timestamp for last time user logged in
