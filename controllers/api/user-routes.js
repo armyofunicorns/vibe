@@ -51,7 +51,7 @@ router.post('/login', (req, res) => {
                 'createdAt': dbUserData.createdAt
             }
 
-            res.json({ user: userData, message: 'You are now loggged in!'});
+            res.json({ user: userData, message: 'You are now logged in!'});
         })
     })
     .catch(err => {
