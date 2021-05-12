@@ -7,7 +7,8 @@ router.post('/', withAuth, (req, res) => {
     Journal.create({
         journalNote: req.body.journalNote,
         userID: req.session.user_id,
-        moodID: req.body.moodID
+        moodID: req.body.moodID,
+        date: req.body.date
     })
     .then(dbJournalData => res.json(dbJournalData))
     .catch(err => {
@@ -53,7 +54,8 @@ router.get('/:id', withAuth, (req, res) => {
             'userID',
             'moodID',
             'createdAt',
-            'updatedAt'
+            'updatedAt',
+            'date'
         ]
     })
     .then(dbJournalData => {
@@ -80,7 +82,8 @@ router.get('/', withAuth, (req, res) => {
             'userID',
             'moodID',
             'createdAt',
-            'updatedAt'
+            'updatedAt',
+            'date'
         ],
         order: [['createdAt', 'ASC']]
     })
