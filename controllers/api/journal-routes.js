@@ -3,12 +3,21 @@ const {Journal, User, Mood} = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+const cdnUrl = 'http://d2rbjfe3250ov1.cloudfront.net/';
+
 router.post('/', withAuth, (req, res) => {
+    let photoUrl;
+    if (req.body.photoID) {
+        photoUrl = cdnUrl +  req.body.photoID;
+    } else {
+        photoUrl = null;
+    }
     Journal.create({
         journalNote: req.body.journalNote,
         userID: req.session.user_id,
         moodID: req.body.moodID,
-        date: req.body.date
+        date: req.body.date,
+        photoUrl: photoUrl,
     })
     .then(dbJournalData => res.json(dbJournalData))
     .catch(err => {
@@ -55,7 +64,8 @@ router.get('/:id', withAuth, (req, res) => {
             'moodID',
             'createdAt',
             'updatedAt',
-            'date'
+            'date',
+            'photoUrl'
         ]
     })
     .then(dbJournalData => {
@@ -83,7 +93,8 @@ router.get('/', withAuth, (req, res) => {
             'moodID',
             'createdAt',
             'updatedAt',
-            'date'
+            'date',
+            'photoUrl'
         ],
         order: [['createdAt', 'ASC']]
     })
