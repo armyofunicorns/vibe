@@ -41,4 +41,55 @@ router.put('/:id', withAuth, (req, res) => {
     });
 });
 
+router.get('/:id', withAuth, (req, res) => {
+    Journal.findOne({
+        where: {
+            journalID: req.params.id,
+            userID: req.session.user_id
+        },
+        attributes: [
+            'journalID',
+            'journalNote',
+            'userID',
+            'moodID',
+            'createdAt',
+            'updatedAt'
+        ]
+    })
+    .then(dbJournalData => {
+        if (!dbJournalData) {
+            res.status(404).json({ message: 'No journal note found with this id!'});
+            return;
+        }
+        res.json(dbJournalData);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.get('/', withAuth, (req, res) => {
+    Journal.findAll({
+        where: {
+            userID: req.session.user_id
+        },
+        attributes: [
+            'journalID',
+            'journalNote',
+            'userID',
+            'moodID',
+            'createdAt',
+            'updatedAt'
+        ],
+        order: [['createdAt', 'ASC']]
+    })
+    .then(dbJournalData => res.json(dbJournalData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
 module.exports = router;
