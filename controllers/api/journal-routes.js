@@ -77,7 +77,7 @@ router.get('/:id', withAuth, (req, res) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json({message: 'Failed to find a journal note'});
     });
 });
 
@@ -101,7 +101,7 @@ router.get('/', withAuth, (req, res) => {
     .then(dbJournalData => res.json(dbJournalData))
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json({message: 'Failed to find notes'});
     });
 });
 

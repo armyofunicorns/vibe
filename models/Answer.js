@@ -33,7 +33,13 @@ Answer.init(
             references: {
                 model: 'user',
                 key: 'userID'
-            }
+            },
+            unique: 'compositeIndex'
+        },
+        date: {
+            type: DataTypes.DATEONLY,
+            unique: 'compositeIndex',
+            allowNull: false
         },
         delFlag: {
             type: DataTypes.BOOLEAN,
