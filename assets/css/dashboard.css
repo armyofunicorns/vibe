@@ -119,7 +119,7 @@ html {
 
 /* highlights dates other than current date */
 .days div:hover:not(.today) {
-  background-color: #262626;
+  /* background-color: #262626; */
   border: 0.2rem solid #777;
   cursor: pointer;
 }
@@ -133,4 +133,24 @@ html {
 /* color of current day */
 .today {
   background-color: #838383;
+}
+
+.Great {
+  background-color: #fbc0ae;
+}
+
+.Good {
+  background-color: #f6e1c4;
+}
+
+.Ok {
+  background-color: #e7e8d8;
+}
+
+.Bad {
+  background-color: #bacbd2;
+}
+
+.Awful {
+  background-color: #495f77;
 }

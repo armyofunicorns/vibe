@@ -1,3 +1,68 @@
+let daysOfMonth = [
+  {
+    user: "George",
+    date: "May 1",
+    mood: "Ok",
+  },
+  {
+    user: "George",
+    date: "May 2",
+    mood: "Awful",
+  },
+  {
+    user: "George",
+    date: "May 3",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 4",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 5",
+    mood: "Good",
+  },
+  {
+    user: "George",
+    date: "May 6",
+    mood: "",
+  },
+  {
+    user: "George",
+    date: "May 7",
+    mood: "Awful",
+  },
+  {
+    user: "George",
+    date: "May 8",
+    mood: "Bad",
+  },
+  {
+    user: "George",
+    date: "May 9",
+    mood: "Ok",
+  },
+  {
+    user: "George",
+    date: "May 10",
+    mood: "Bad",
+  },
+  {
+    user: "George",
+    date: "May 11",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 12",
+    mood: "Great",
+  },
+];
+
+// console.log(daysOfMonth[5]);
+
 const date = new Date();
 
 const renderCalendar = () => {
@@ -5,18 +70,21 @@ const renderCalendar = () => {
 
   const monthDays = document.querySelector(".days");
 
+  // Finds last day of the month
   const lastDay = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
   ).getDate();
 
+  // Last day of previous month
   const prevLastDay = new Date(
     date.getFullYear(),
     date.getMonth(),
     0
   ).getDate();
 
+  // Day of the week that the 1st of the month starts on
   const firstDayIndex = date.getDay();
 
   const lastDayIndex = new Date(
@@ -25,7 +93,10 @@ const renderCalendar = () => {
     0
   ).getDay();
 
+  // first days of the next month
   const nextDays = 7 - lastDayIndex - 1;
+
+  // let mood = [{ Great }, { Good }, { Ok }, { Bad }, { Awful }];
 
   const months = [
     "January",
@@ -61,11 +132,13 @@ const renderCalendar = () => {
       date.getMonth() === new Date().getMonth()
     ) {
       //  == Populates calender with todays date == //
-      days += `<div class="today">${i}</div>`;
-      console.log(Math.floor(Date.now() / 1000));
-    } else {
+      days += `<div class="today ${months[date.getMonth()] + i}">${i}</div>`;
+    } else if (daysOfMonth[i - 1] === undefined) {
       // == Populates Calendar With Dates == //
-      days += `<div>${i}</div>`;
+      days += `<div class="${months[date.getMonth()] + i}">${i}</div>`;
+      // console.log(daysOfMonth[i - 1].mood);
+    } else {
+      days += `<div class="${daysOfMonth[i - 1].mood}">${i}</div>`;
     }
   }
 
@@ -89,4 +162,3 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
-console.log(new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate());
