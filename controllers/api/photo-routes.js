@@ -17,7 +17,7 @@ const s3 = new AWS.S3({
 router.post('/', upload.single('photo'), function (req, res, next) {
     console.log(uuidv4());
     const photoId = uuidv4();
-    const params = { Bucket: 'vibe-ucb-photos', Key: photoId, Body: req.file.buffer };
+    const params = { Bucket: 'vibe-ucb-photos', Key: photoId, Body: req.file.buffer, ACL: 'public-read'};
     s3.upload(params, function(err, data) {
         if (err) {
             res.status(500).json({message: 'Failed to upload a photo'});

@@ -3,11 +3,21 @@ const {Journal, User, Mood} = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+const cdnUrl = 'http://d2rbjfe3250ov1.cloudfront.net/';
+
 router.post('/', withAuth, (req, res) => {
+    let photoUrl;
+    if (req.body.photoID) {
+        photoUrl = cdnUrl +  req.body.photoID;
+    } else {
+        photoUrl = null;
+    }
     Journal.create({
         journalNote: req.body.journalNote,
         userID: req.session.user_id,
-        moodID: req.body.moodID
+        moodID: req.body.moodID,
+        date: req.body.date,
+        photoUrl: photoUrl,
     })
     .then(dbJournalData => res.json(dbJournalData))
     .catch(err => {
@@ -53,7 +63,9 @@ router.get('/:id', withAuth, (req, res) => {
             'userID',
             'moodID',
             'createdAt',
-            'updatedAt'
+            'updatedAt',
+            'date',
+            'photoUrl'
         ]
     })
     .then(dbJournalData => {
@@ -65,7 +77,7 @@ router.get('/:id', withAuth, (req, res) => {
     })
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json({message: 'Failed to find a journal note'});
     });
 });
 
@@ -80,14 +92,16 @@ router.get('/', withAuth, (req, res) => {
             'userID',
             'moodID',
             'createdAt',
-            'updatedAt'
+            'updatedAt',
+            'date',
+            'photoUrl'
         ],
         order: [['createdAt', 'ASC']]
     })
     .then(dbJournalData => res.json(dbJournalData))
     .catch(err => {
         console.log(err);
-        res.status(500).json(err);
+        res.status(500).json({message: 'Failed to find notes'});
     });
 });
 
