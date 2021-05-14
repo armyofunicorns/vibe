@@ -1,8 +1,14 @@
-const { Model, DataTypes} = require('sequelize');
+const { Model, DataTypes, TIME} = require('sequelize');
 const sequelize = require('../config/connection');
+const { beforeCreate, beforeUpdate } = require('./Mood');
+const bcrypt = require('bcrypt');
 
 // create user model
-class User extends Model {}
+class User extends Model {
+    checkPassword(loginPw) {
+        return bcrypt.compareSync(loginPw, this.password);
+    }
+}
 
 // define table columns and configuration
 User.init(
@@ -23,9 +29,32 @@ User.init(
         delFlag: {
             type: DataTypes.BOOLEAN,
             defaultValue: false,
+        },
+        password: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [6],
+                isNumeric: true,
+            }
+        },
+        // Unix timestamp for last time user logged in
+        lastLogin: {
+            type: DataTypes.INTEGER,
+            allowNull: true
         }
     },
     {
+        hooks: {
+            async beforeCreate(newUserData) {
+                newUserData.password = await bcrypt.hash(newUserData.password, 10);
+                return newUserData;
+            },
+            async beforeUpdate(updatedUserData) {
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+                return updatedUserData;
+            }
+        },
         sequelize,
         // don't pluralize name of database table
         freezeTableName: true,

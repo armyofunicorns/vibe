@@ -23,7 +23,8 @@ Journal.init(
             references: {
                 model: 'user',
                 key: 'userID'
-            }
+            },
+            unique: 'compositeIndex'
         },
         photoUrl: {
             type: DataTypes.STRING,
@@ -38,6 +39,11 @@ Journal.init(
                 model: 'mood',
                 key: 'moodID'
             }
+        },
+        date: {
+            type: DataTypes.DATEONLY,
+            unique: 'compositeIndex',
+            allowNull: false
         },
         delFlag: {
             type: DataTypes.BOOLEAN,
