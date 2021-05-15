@@ -29,10 +29,10 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbQuestionData => {
+        .then(dbAnswerData => {
             //serialize data before passing to template
-            const questions = dbQuestionData.map(question => question.get({plain: true}));
-            res.render('answers-to-questions', {questions, loggedIn: true});
+            const answers = dbAnswerData.map(answer => answer.get({plain: true}));
+            res.render('answers', {answers, loggedIn: true});
         })
         .catch(err => {
             console.log(err);
