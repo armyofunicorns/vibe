@@ -1,30 +1,27 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Journal, User, Mood} = require('../models');
+const { User, Answer, Question} = require('../models');
 
 // import our middleware
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
-    Journal.findAll({
+    Answer.findAll({
         where: {
             // use the ID from the session
             userID: req.session.user_id
         },
         attributes: [
-            'journalID',
-            'journalNote',
+            'answerText',
+            'questionID',
             'userID',
-            'moodID',
-            'createdAt',
-            'updatedAt',
-            'date',
-            'photoUrl'
+            'date'
         ],
+        order: [['createdAt', 'ASC']],
         include: [
             {
-                model: Mood,
-                attributes: ['moodID', 'title', 'color'],
+                model: Question,
+                attributes: ['questionText'],
             },
             {
                 model: User,
@@ -32,10 +29,10 @@ router.get('/', withAuth, (req, res) => {
             }
         ]
     })
-        .then(dbJournalData => {
+        .then(dbQuestionData => {
             //serialize data before passing to template
-            const journals = dbJournalData.map(journal => journal.get({plain: true}));
-            res.render('dashboard', {journals, loggedIn: true});
+            const questions = dbQuestionData.map(question => question.get({plain: true}));
+            res.render('answers-to-questions', {questions, loggedIn: true});
         })
         .catch(err => {
             console.log(err);
