@@ -48,6 +48,10 @@
     margin: .25rem 0 1rem 0;
   }
 
+  .beBold {
+    font-weight: 700;
+  }
+
   /* Style for links */
   a {
     font-family: 'Domine', sans-serif;
@@ -88,12 +92,37 @@
     flex-direction: column;
     flex-wrap: wrap;
     align-content: flex-start;
-    list-style: none;
+    margin: 0 .25rem;
   }
 
   #moodSummary ul li {
-    margin: .5rem 1rem .5rem 0;
-    list-style-image: url(./assets/images/summary-icon-1.svg);
+    padding: .5rem 1rem .5rem 2.25rem;
+    list-style: none;
+    vertical-align: middle;
+  }
+
+  #moodSummary ul li:first-child {
+    background: url('https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-1_trko7t.svg') no-repeat left center;
+  }
+
+  #moodSummary ul li:nth-child(2) {
+    background: url('https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-2-3_ljwky7.svg') no-repeat left center;
+  }
+
+  #moodSummary ul li:nth-child(3) {
+    background: url('https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-3_ads3m6.svg') no-repeat left center;
+  }
+
+  #moodSummary ul li:nth-child(4) {
+    background: url('https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-4_miufj3.svg') no-repeat left center;
+  }
+
+  #moodSummary ul li:nth-child(5) {
+    background: url('https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-5_fbbjuh.svg') no-repeat left center;
+  }
+
+  #moodSummary ul li:last-child {
+    font-weight:400;
   }
 
   /* Custom icons for each item */
