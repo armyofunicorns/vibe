@@ -3,12 +3,21 @@ const sequelize = require('../config/connection');
 const { Journal, User, Mood} = require('../models');
 
 // route for login page
-router.get('/', (req, res) => {
+router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
     }
     res.render('login');
+});
+
+// route for sign up page
+router.get('/signup', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
 });
 
 // route for single journal
