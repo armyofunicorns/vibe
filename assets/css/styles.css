@@ -140,6 +140,23 @@
     padding: 0;
   }
 
+  /* Styles for the modal */
+  /* Modal */
+  #modalUi {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--senary-color);
+    opacity: 0.95;
+    z-index: 2000000;
+    cursor: pointer;
+  }
+
   /* Start of styles for the page flow */
   header div {
     margin: 12% 12% 0 12%;
