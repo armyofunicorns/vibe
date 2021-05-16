@@ -20,6 +20,11 @@ router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// add about route
+router.get('/about', (req, res) => {
+    res.render('about');
+});
+
 // route for single journal
 router.get('/journal/:id', (req, res) => {
     Journal.findOne({
