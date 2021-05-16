@@ -18,10 +18,19 @@ let moodChoices = [
     ], 
 ]; 
 
+// Sample Mood Object
+let moodPostTest = [
+    [
+        '12:15PM','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et tortor vitae lectus porta sodales eu vitae felis. Pellentesque sit amet nunc pharetra, molestie ex scelerisque, pellentesque arcu. Nam eget mollis ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla varius, nisi sed auctor accumsan, ligula ante euismod erat, sit amet laoreet ante odio nec urna. Curabitur gravida magna purus, id rhoncus enim imperdiet vitae. Nam fermentum nunc eu lacinia posuere. Phasellus ornare ut ante ac aliquam. Fusce volutpat, mauris et semper viverra, enim dolor bibendum mi, quis sagittis risus diam sed justo. Nulla sollicitudin nulla vitae tempor luctus. Fusce mattis venenatis tincidunt. Etiam ullamcorper ligula vitae accumsan finibus. Etiam fringilla rhoncus tempus. Nulla non mi sit amet nunc ultrices efficitur nec ut diam.', 'https://res.cloudinary.com/daginzisw/image/upload/v1621201121/vibe/Screen_Shot_2021-05-15_at_4.08.18_PM_c0givs.png'
+    ],
+];
+
 // Control the background color of the page
 function changePageBackColor(color){
     document.body.style.background = 'var(' + color + ')';
 }
+
+
 
 // Functions for controlling the modal 
 function on() {

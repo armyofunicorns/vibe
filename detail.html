@@ -32,11 +32,29 @@
             // Update the values based on the mood
             document.getElementById('moodIcon').innerHTML = '<img src="./assets/images/mood-' + newMoodNum + '-v4.svg"/>';
             document.getElementById('moodTitle').innerHTML = String(newMoodTitle);
+
+            // Set the post variables
+            let newMoodPostTime = moodPostTest[0][0];
+            let newMoodPostComment = moodPostTest[0][1];
+            let newMoodPostImage = moodPostTest[0][2];
+
+            // Updagte the page based on the mood
+            document.getElementById('postTime').innerHTML = String(newMoodPostTime);
+            document.getElementById('postComment').innerHTML = String(newMoodPostComment);
+            document.getElementById('postImage').innerHTML = '<img src="' + newMoodPostImage + '"/>';
+            
         };       
     </script>
 </head>
 <body>
     <!-- This is for the navigation logo area -->
+    <header>
+        <div>
+            <a href="history(-1);" class="backStack">	
+                PREVIOUS DAY
+            </a>
+        </div>
+    </header>
     <section id="intPages">
         <nav>
             <div class="smLogo">
@@ -61,14 +79,14 @@
         </div>
     </section>
 
-    <section>
-
+    <section id="postArea">
+        <div id="postTime"></div>
+        <div id="postComment"></div>
+        <div id="postImage"></div>
     </section>
  
 
     <!-- Including Handlebars -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
-    
 </body>
 </html>
