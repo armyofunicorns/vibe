@@ -13,7 +13,7 @@ html {
   width: 100%;
   height: 100vh;
   background-color: #838383;
-  color: #eee;
+  color: rgb(42, 42, 42);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,8 +21,8 @@ html {
 
 .calendar {
   width: 45rem;
-  height: 59rem;
-  background-color: #bbbbbb;
+  height: 63rem;
+  background-image: linear-gradient(rgb(152, 255, 246), rgb(255, 217, 128));
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.5);
 }
 
@@ -30,13 +30,13 @@ html {
 .header {
   width: 100%;
   height: 8rem;
-  background-color: #bbbbbb;
+  font-family: "Snell Roundhand", cursive;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 2rem;
   text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .vibe {
@@ -50,14 +50,14 @@ html {
 /* month */
 .month {
   width: 100%;
-  height: 12rem;
-  background-color: #bbbbbb;
+  height: 10rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
   text-align: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .month i {
@@ -77,6 +77,17 @@ html {
   font-size: 1.6rem;
 }
 
+.feels {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+}
 /* weekdays */
 .weekdays {
   width: 100%;
@@ -94,7 +105,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 /* days */
@@ -110,10 +121,11 @@ html {
   margin: 0.3rem;
   width: calc(40.2rem / 7);
   height: 5rem;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
   transition: background-color 0.2s;
 }
 
@@ -132,25 +144,25 @@ html {
 
 /* color of current day */
 .today {
-  background-color: #838383;
+  background-color: #fdfdfd;
 }
 
-.Great {
+.green {
   background-color: #fbc0ae;
 }
 
-.Good {
+.sky-blue {
   background-color: #f6e1c4;
 }
 
-.Ok {
+.blue {
   background-color: #e7e8d8;
 }
 
-.Bad {
+.yellow {
   background-color: #bacbd2;
 }
 
-.Awful {
+.red {
   background-color: #495f77;
 }
