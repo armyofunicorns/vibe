@@ -31,16 +31,14 @@
     font-family: 'Domine', sans-serif;  
     font-size: 2rem;
     font-weight:700;
-    margin: 2% 0;
-    
+    margin: 2% 0 1% 0;
   }
 
   h2 {
     font-family: 'Domine', sans-serif;
     font-size: 1.10rem;
     font-weight:700;
-    margin: 1.5rem 0 .5rem 0;
-    
+    margin: .75rem 0;
   }
   
   p {
@@ -85,6 +83,20 @@
     font-weight:700;
   }
 
+  #moodSummary ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    list-style: none;
+  }
+
+  #moodSummary ul li {
+    margin: .5rem 1rem .5rem 0;
+    list-style-image: url(./assets/images/summary-icon-1.svg);
+  }
+
+  /* Custom icons for each item */
   input, button {
     font-size: 1rem;
     font-weight: 700;
@@ -126,6 +138,59 @@
     position: absolute;
     bottom: 10%;
     right: 12%;
+  }
+
+   /* Styles for Dashboard view */
+   #intPages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 8% 12%;
+  }
+
+  #intPages div, nav {
+    /* border: 1px solid #ED6376; */
+  }
+
+  #welcomeText, #todayQuery {
+    margin: 4% 12% 4% 12%;
+  }
+
+  #moodCalendar, #moodSummary {
+    margin: 12% 12% 4% 12%;
+  }
+
+  .smallTitle {
+    text-transform: uppercase;
+    font-size: .85rem;
+    font-weight: 400;
+  }
+
+  .bigLink {
+    font-size: 1.5rem;
+  }
+
+  .infoText {
+    font-size: .85rem;
+    font-weight: 400;
+    margin: 0 0 4% 0; 
+  }
+
+  /* To be deleted */
+  /* Sample calendar here */
+  #sampleCalendar {
+    max-width: 500px;
+    height: 300px;
+    margin: auto;
+    background-color: #ED6376;
+  }
+
+  /* Styles for the Dashboard */
+  div.smLogo img {
+    width: 80px;
+    height: auto;
   }
 
   /* Styles for the form */

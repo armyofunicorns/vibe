@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe - Mood Tracker - Dashboard</title>
+    <!-- Favicons -->
+    <!-- <link rel="icon" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- This is for the navigation logo area -->
+    <section id="intPages">
+        <nav>
+            <div class="smLogo">
+                <img src="./assets/images/Vibe-logo.svg" alt="Vibe Logo">
+            </div>
+        </nav>
+        <div>
+            <a href="/record"><img src="./assets/images/add-icon-button.svg" alt="Record Your Mood"></a>
+        </div>
+    </section>
+    
+    <!-- This is for some text and info -->
+    <section id="welcomeText">
+        <div class="smallTitle">
+            {{insert date}} {{insert time}}
+        </div>
+        <h2>
+            Welcome, {{insert username}}
+        </h2>
+    </section>
+
+    <!-- This is the section for logic -->
+    <!-- In this section we have two states... -->
+    <section id="todayQuery">
+        <!-- 1. Has the user recorded a mood today? -->
+        <p>
+            You haven’t recorded your mood today.
+        </p>
+        <div>
+            <a href="/record" class="bigLink">How are you?</a>
+        </div>
+        <!-- 2. Has the user recorded their mood today? -->
+        <!-- <p>
+            Nice job! You recorded your mood today.
+        </p> -->
+    </section>
+
+    <!-- This is the section for the Calendar -->
+    <section id="moodCalendar">
+        <h1>
+            Mood Calendar
+        </h1>
+        <div class="infoText">
+            Last 30 days
+        </div>
+        <!-- Calendar goes below -->
+        <!-- End of calendar -->
+        <div id="sampleCalendar">
+            The calendar will go here
+        </div>
+        <!-- Need to include a color scale key below -->
+    </section>
+
+    <!-- This is the section for the Mood Summary -->
+    <section id="moodSummary">
+        <h1>
+           Mood Summary 
+        </h1>
+        <div class="infoText">
+            In the last 30 days
+        </div>
+        <ul>
+            <li>You recorded your mood {{number of times}} times on {{number of days}} days.</li>
+            <!-- This is an area that will need conditional logic -->
+            <li>Your current recorded mood is {{current mood}} ➞ leaning {{nearest mood}}.</li>
+            <li>You wrote {{number of notes}} notes in your mood recordings.</li>
+            <li>You answered {{number of feelings}} feeling questions.</li>
+            <li>You uploaded {{number of photos}} photos to mood recordings.</li>  
+        </ul>
+    </section>
+</body>
+</html>
