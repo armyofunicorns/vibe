@@ -1,0 +1,64 @@
+/* Reset browser variations */
+/* Add a universal selector */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-color: #495f77;
+    --secondary-color: #bacbd2;
+    --tertiary-color: #FFC0CB;
+    --quaternary-color: #F7F4ED;
+    --quinary-color: #000;
+    --senary-color: #f4f4f4;
+    --septenary-color: #303030;
+  }
+  /* Global Styles */
+  body { 
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-family: 'Abel', sans-serif;
+    font-size: 1em;
+    font-weight:bold;
+    font-style:normal;
+  }
+
+  /* Define the text styles */
+h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    font-weight:bold;
+    font-style:normal;
+    margin: .5em 0 0 0;
+  }
+  
+p {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    font-weight:normal;
+    font-style:normal;
+    line-height: 1.75em;
+    margin: .5em 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding: 2% 6%;
+    z-index: 9999;
+    border: 1px solid #FFC0CB;
+}
+
+
+header nav  {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #FFC0CB;
+}
+
+header nav i {
+    font-size: 3rem;
+}
