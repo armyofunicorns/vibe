@@ -5,12 +5,12 @@
 <style type="text/css">
 	.st0{display:none;}
 	.st1{display:inline;}
-	.st2{fill:#FFFFFF;}
+	.st2{fill:#474747;}
 	.st3{fill:#B8E082;}
-	.st4{display:inline;fill:#FFFFFF;}
-	.st5{display:inline;fill:none;stroke:#FFFFFF;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st4{display:inline;fill:#474747;}
+	.st5{display:inline;fill:none;stroke:#474747;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st6{fill:#89C9F0;}
-	.st7{stroke:#FFFFFF;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st7{stroke:#474747;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
 	.st8{fill:#FFD95E;}
 	.st9{fill:#FF8F75;}
 	.st10{fill:#86DBC7;}

@@ -8,24 +8,34 @@
     <!-- Favicons -->
     <!-- <link rel="icon" href="./favicon.png" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
-    
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="./assets/css/styles.css" />
 
     <!-- Main script file -->
     <script src="./assets/js/scripts.js"></script>
     
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Change the background of the page -->
+    <script>
+        window.onload = function() {
+            // Declare my mood settings
+            let newBgColor = moodChoices[2][3];
+            let newMoodTitle = moodChoices[2][0];
+            let newMoodNum = moodChoices[2][1];
+
+            // Update the background of the page
+            changePageBackColor(newBgColor);
+            // Update the values based on the mood
+            document.getElementById('moodIcon').innerHTML = '<img src="./assets/images/mood-' + newMoodNum + '-v4.svg"/>';
+            document.getElementById('moodTitle').innerHTML = String(newMoodTitle);
+        };       
+    </script>
 </head>
 <body>
-    
-    <!-- This is the overlay for contact content -->
-    <div id="modalUi" onclick="off()">
-        <!-- Include  -->
-    </div>
-
     <!-- This is for the navigation logo area -->
     <section id="intPages">
         <nav>
@@ -33,75 +43,32 @@
                 <img src="./assets/images/Vibe-logo.svg" alt="Vibe Logo">
             </div>
         </nav>
-        <div>
-            <a href="javascript:off();"><img src="./assets/images/close-icon-button.svg" alt="Close Modal"></a>
-        </div>
     </section>
     
     <!-- This is for some text and info -->
     <section id="welcomeText">
         <div class="smallTitle">
-            {{insert date}} {{insert time}}
+            {{insert date}}
         </div>
-        <h2>
-            Welcome, {{insert username}}
-        </h2>
-    </section>
-
-    <!-- This is the section for logic -->
-    <!-- In this section we have two states... -->
-    <section id="todayQuery">
-        <!-- 1. Has the user recorded a mood today? -->
-        <p>
-            You haven’t recorded your mood today.
-        </p>
+        <h1>
+            Day In Review
+        </h1>
+        <!-- This is the section for mood -->
+        <!-- Five mood choices: 5 Amazing,  -->
         <div>
-            <a href="/record" class="bigLink">How are you?</a>
+            <div id="moodIcon"></div>
+            <div id="moodTitle"></div>
         </div>
-        <!-- 2. Has the user recorded their mood today? -->
-        <!-- <p>
-            Nice job! You recorded your mood today.
-        </p> -->
     </section>
 
-    <!-- This is the section for the Calendar -->
-    <section id="moodCalendar">
-        <h1>
-            Mood Calendar
-        </h1>
-        <div class="infoText">
-            Last 30 days
-        </div>
-        <!-- Calendar goes below -->
-        <!-- End of calendar -->
-        <div id="sampleCalendar">
-            The calendar will go here
-        </div>
-        <!-- Need to include a color scale key below -->
-    </section>
+    <section>
 
-    <!-- This is the section for the Mood Summary -->
-    <section id="moodSummary">
-        <h1>
-           Mood Summary 
-        </h1>
-        <div class="infoText">
-            In the last 30 days
-        </div>
-        <ul>
-            <li>You recorded your mood <span class="beBold">{{number of times}}</span>times on <span class="beBold">{{number of days}} d</span>ays.</li>
-            <!-- This is an area that will need conditional logic -->
-            <li>Your current recorded mood is <span class="beBold">{{current mood}} ➞ leaning {{nearest mood}}</span>.</li>
-            <li>You wrote <span class="beBold">{{number of notes}}</span>notes in your mood recordings.</li>
-            <li>You answered <span class="beBold">{{number of feelings}}</span> feeling questions.</li>
-            <li>You uploaded <span class="beBold">{{number of photos}}</span> photos to mood recordings.</li>  
-        </ul>
     </section>
+ 
 
     <!-- Including Handlebars -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- Main script file -->
-    <script src="./assets/js/scripts.js"></script>
+    
 </body>
 </html>

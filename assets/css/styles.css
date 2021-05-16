@@ -125,6 +125,18 @@
     font-weight:400;
   }
 
+  #moodIcon {
+    margin: 8% 0 0 0;
+  }
+
+  #moodIcon img {
+    width: 50px;
+  }
+
+  #moodIcon svg {
+    fill: var(--septenary-color);
+  }
+
   /* Custom icons for each item */
   input, button {
     font-size: 1rem;
