@@ -1,15 +1,69 @@
-let daysOfMonth;
+let daysOfMonth = [
+  {
+    user: "George",
+    date: "May 1",
+    mood: "Ok",
+  },
+  {
+    user: "George",
+    date: "May 2",
+    mood: "Awful",
+  },
+  {
+    user: "George",
+    date: "May 3",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 4",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 5",
+    mood: "Good",
+  },
+  {
+    user: "George",
+    date: "May 6",
+    mood: "",
+  },
+  {
+    user: "George",
+    date: "May 7",
+    mood: "Awful",
+  },
+  {
+    user: "George",
+    date: "May 8",
+    mood: "Bad",
+  },
+  {
+    user: "George",
+    date: "May 9",
+    mood: "Ok",
+  },
+  {
+    user: "George",
+    date: "May 10",
+    mood: "Bad",
+  },
+  {
+    user: "George",
+    date: "May 11",
+    mood: "Great",
+  },
+  {
+    user: "George",
+    date: "May 12",
+    mood: "Great",
+  },
+];
+
+// console.log(daysOfMonth[5]);
+
 const date = new Date();
-function getDays() {
-  fetch("/api/journals")
-    .then((r) => r.json())
-    .then((r) => {
-      daysOfMonth = r;
-      console.log(daysOfMonth);
-      renderCalendar();
-    });
-}
-getDays();
 
 const renderCalendar = () => {
   date.setDate(1);
@@ -42,20 +96,7 @@ const renderCalendar = () => {
   // first days of the next month
   const nextDays = 7 - lastDayIndex - 1;
 
-  // function to formate date properly to match DB
-  function formatDate(date) {
-    var d = new Date(date),
-      month = "" + (d.getMonth() + 1),
-      day = "" + d.getDate(),
-      year = d.getFullYear();
-
-    if (month.length < 2) month = "0" + month;
-    if (day.length < 2) day = "0" + day;
-
-    return [year, month, day].join("-");
-  }
-
-  console.log(formatDate(daysOfMonth));
+  // let mood = [{ Great }, { Good }, { Ok }, { Bad }, { Awful }];
 
   const months = [
     "January",
@@ -95,11 +136,9 @@ const renderCalendar = () => {
     } else if (daysOfMonth[i - 1] === undefined) {
       // == Populates Calendar With Dates == //
       days += `<div class="${months[date.getMonth()] + i}">${i}</div>`;
-      console.log(daysOfMonth.moodId);
+      // console.log(daysOfMonth[i - 1].mood);
     } else {
-      days += `<div class="${daysOfMonth[i - 1]} + " " + ${
-        daysOfMonth.moodId
-      }">${i}</div>`;
+      days += `<div class="${daysOfMonth[i - 1].mood}">${i}</div>`;
     }
   }
 
@@ -122,7 +161,4 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 
-//  == selector for current date == //
-document.querySelector(".today").addEventListener("click", () => {
-  // on click open modal
-});
+renderCalendar();
