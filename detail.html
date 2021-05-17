@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe - Mood Tracker - Detail</title>
+    <!-- Favicons -->
+    <!-- <link rel="icon" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
+
+    <!-- Main script file -->
+    <script src="./assets/js/scripts.js"></script>
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Change the background of the page -->
+    <script>
+        window.onload = function() {
+            // Declare my mood settings
+            let newBgColor = moodChoices[2][3];
+            let newMoodTitle = moodChoices[2][0];
+            let newMoodNum = moodChoices[2][1];
+
+            // Update the background of the page
+            changePageBackColor(newBgColor);
+            // Update the values based on the mood
+            document.getElementById('moodIcon').innerHTML = '<img src="./assets/images/mood-' + newMoodNum + '-v4.svg"/>';
+            document.getElementById('moodTitle').innerHTML = String(newMoodTitle);
+
+            // Set the post variables
+            let newMoodPostTime = moodPostTest[0][0];
+            let newMoodPostComment = moodPostTest[0][1];
+            let newMoodPostImage = moodPostTest[0][2];
+
+            // Updagte the page based on the mood
+            document.getElementById('postTime').innerHTML = String(newMoodPostTime);
+            document.getElementById('postComment').innerHTML = String(newMoodPostComment);
+            document.getElementById('postImage').innerHTML = '<img src="' + newMoodPostImage + '"/>';
+            
+        };       
+    </script>
+</head>
+<body>
+    <!-- This is for the navigation logo area -->
+    <header>
+        <div>
+            <a href="history(-1);" class="backStack">	
+                PREVIOUS DAY
+            </a>
+        </div>
+    </header>
+    <section id="intPages">
+        <nav>
+            <div class="smLogo">
+                <img src="./assets/images/Vibe-logo.svg" alt="Vibe Logo">
+            </div>
+        </nav>
+    </section>
+    
+    <!-- This is for some text and info -->
+    <section id="welcomeText">
+        <div class="smallTitle">
+            {{insert date}}
+        </div>
+        <h1>
+            Day In Review
+        </h1>
+        <!-- This is the section for mood -->
+        <!-- Five mood choices: 5 Amazing,  -->
+        <div>
+            <div id="moodIcon"></div>
+            <div id="moodTitle"></div>
+        </div>
+    </section>
+
+    <section id="postArea">
+        <div id="postTime"></div>
+        <div id="postComment"></div>
+        <div id="postImage"></div>
+    </section>
+ 
+
+    <!-- Including Handlebars -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+</body>
+
+<footer>
+    <h5>
+        © Copyright Created by Army of Unicorns
+    </h5>
+</footer>
+</html>
