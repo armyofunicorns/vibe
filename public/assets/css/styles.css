@@ -1,0 +1,416 @@
+/* Reset browser variations */
+/* Add a universal selector */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #b8e082;
+  --secondary-color: #9bdde8;
+  --tertiary-color: #ffd95e;
+  --quaternary-color: #f0ab62;
+  --quinary-color: #ed6376;
+  --senary-color: #fff;
+  --septenary-color: #474747;
+  --octonary-color: #d1d1d1;
+}
+/* Global Styles */
+body {
+  color: var(--septenary-color);
+  background-color: var(--senary-color);
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* Define the text styles */
+h1 {
+  font-family: "Domine", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2% 0 1% 0;
+}
+
+h2 {
+  font-family: "Domine", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.75rem 0;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  margin: 0.25rem 0 1rem 0;
+}
+
+.beBold {
+  font-weight: 700;
+}
+
+/* Style for links */
+a {
+  font-family: "Domine", sans-serif;
+  color: var(--septenary-color);
+  text-decoration: underline;
+  font-size: 1rem;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+a.backStack {
+  color: var(--septenary-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  list-style: none;
+}
+
+ul li a {
+  font-size: 1.5rem;
+  margin: 0 0 0 2rem;
+}
+
+ul li:last-child {
+  font-weight: 700;
+}
+
+#moodSummary ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  margin: 0 0.25rem;
+}
+
+#moodSummary ul li {
+  padding: 0.5rem 1rem 0.5rem 2.25rem;
+  list-style: none;
+  vertical-align: middle;
+}
+
+#moodSummary ul li:first-child {
+  background: url("https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-1_trko7t.svg")
+    no-repeat left center;
+}
+
+#moodSummary ul li:nth-child(2) {
+  background: url("https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-2-3_ljwky7.svg")
+    no-repeat left center;
+}
+
+#moodSummary ul li:nth-child(3) {
+  background: url("https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-3_ads3m6.svg")
+    no-repeat left center;
+}
+
+#moodSummary ul li:nth-child(4) {
+  background: url("https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-4_miufj3.svg")
+    no-repeat left center;
+}
+
+#moodSummary ul li:nth-child(5) {
+  background: url("https://res.cloudinary.com/daginzisw/image/upload/v1621190868/vibe/summary-icon-5_fbbjuh.svg")
+    no-repeat left center;
+}
+
+#moodSummary ul li:last-child {
+  font-weight: 400;
+}
+
+#moodIcon {
+  margin: 8% 0 0 0;
+}
+
+#moodIcon img {
+  width: 50px;
+}
+
+#moodIcon svg {
+  fill: var(--septenary-color);
+}
+
+/* Custom icons for each item */
+input,
+button {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 4% 12%;
+}
+
+label {
+  color: var(--senary-color);
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styles for the modal */
+/* Modal */
+#modalUi {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--senary-color);
+  opacity: 0.95;
+  z-index: 2000000;
+  cursor: pointer;
+}
+
+/* Start of styles for the page flow */
+header div {
+  margin: 12% 12% 0 12%;
+}
+
+header nav img {
+  margin: 10% 12% 8% 12%;
+}
+
+span.arrowSize {
+  font-size: 1.5rem;
+}
+
+#introText {
+  margin: 16% 12% 4% 12%;
+}
+
+/* This is for the link below a p */
+#introText p:last-child {
+  padding-top: 1rem;
+}
+
+#ctaLinks {
+  /* margin: 20% 12% 8% 12%; */
+  position: absolute;
+  bottom: 10%;
+  right: 12%;
+}
+
+/* Styles for Dashboard view */
+#intPages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 8% 12%;
+}
+
+/* #intPages div,
+nav {
+  /* border: 1px solid #ED6376; */
+/* } */
+*/ #welcomeText,
+#todayQuery {
+  margin: 4% 12% 4% 12%;
+}
+
+#moodCalendar,
+#moodSummary {
+  margin: 12% 12% 4% 12%;
+}
+
+.smallTitle {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.bigLink {
+  font-size: 1.5rem;
+}
+
+.infoText {
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin: 0 0 4% 0;
+}
+
+/* Styles for the Dashboard */
+div.smLogo img {
+  width: 80px;
+  height: auto;
+}
+
+/* Styles for the form */
+.formInput {
+  border: none;
+  outline: none;
+  border-bottom: 2px var(--septenary-color) solid;
+  margin: 1% auto 1% auto;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  font-size: 1rem;
+  color: var(--septenary-color);
+  width: 76%;
+}
+
+/* create a new rule for focus state */
+.formInput:focus {
+  outline: none;
+  opacity: 0.5;
+}
+
+.helperText {
+  color: var(--octonary-color);
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin: 0 12% 2% 12%;
+  width: 76%;
+  text-align: right;
+}
+
+/* Start Calendar Styling */
+.container {
+  width: 100%;
+  height: 63rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  width: 45rem;
+  height: 63rem;
+  background-color: var(--senary-color);
+  /* box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.5); */
+}
+
+/* header */
+.header {
+  width: 100%;
+  height: 8rem;
+  font-family: "Snell Roundhand", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.vibe {
+  font-size: 5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0rem;
+}
+
+/* month */
+.month {
+  width: 100%;
+  height: 10rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.month h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.month p {
+  font-size: 1.6rem;
+}
+
+.feels {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+}
+/* weekdays */
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+/* days */
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  width: calc(40.2rem / 7);
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s;
+}
+
+/* highlights dates other than current date */
+.days div:hover:not(.today) {
+  /* background-color: #262626; */
+  border: 0.2rem solid #777;
+  cursor: pointer;
+}
+
+/* prev / next arrows */
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+/* color of current day */
+.today {
+  background-color: #fdfdfd;
+}
