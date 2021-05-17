@@ -1,69 +1,15 @@
-let daysOfMonth = [
-  {
-    user: "George",
-    date: "May 1",
-    mood: "Ok",
-  },
-  {
-    user: "George",
-    date: "May 2",
-    mood: "Awful",
-  },
-  {
-    user: "George",
-    date: "May 3",
-    mood: "Great",
-  },
-  {
-    user: "George",
-    date: "May 4",
-    mood: "Great",
-  },
-  {
-    user: "George",
-    date: "May 5",
-    mood: "Good",
-  },
-  {
-    user: "George",
-    date: "May 6",
-    mood: "",
-  },
-  {
-    user: "George",
-    date: "May 7",
-    mood: "Awful",
-  },
-  {
-    user: "George",
-    date: "May 8",
-    mood: "Bad",
-  },
-  {
-    user: "George",
-    date: "May 9",
-    mood: "Ok",
-  },
-  {
-    user: "George",
-    date: "May 10",
-    mood: "Bad",
-  },
-  {
-    user: "George",
-    date: "May 11",
-    mood: "Great",
-  },
-  {
-    user: "George",
-    date: "May 12",
-    mood: "Great",
-  },
-];
-
-// console.log(daysOfMonth[5]);
-
+let daysOfMonth;
 const date = new Date();
+function getDays() {
+  fetch("/api/journals")
+    .then((r) => r.json())
+    .then((r) => {
+      daysOfMonth = r;
+      console.log(daysOfMonth);
+      renderCalendar();
+    });
+}
+getDays();
 
 const renderCalendar = () => {
   date.setDate(1);
@@ -96,7 +42,24 @@ const renderCalendar = () => {
   // first days of the next month
   const nextDays = 7 - lastDayIndex - 1;
 
-  // let mood = [{ Great }, { Good }, { Ok }, { Bad }, { Awful }];
+  // function to formate date properly to match DB
+  function formatDate(date) {
+    var d = new Date(date),
+      month = "" + (d.getMonth() + 1),
+      day = "" + d.getDate(),
+      year = d.getFullYear();
+
+    if (month.length < 2) month = "0" + month;
+    if (day.length < 2) day = "0" + day;
+    console.log(month);
+    return [year, month, day].join("-");
+  }
+
+  let day = "" + new Date().getDate();
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() - day + 1);
+
+  console.log(day);
 
   const months = [
     "January",
@@ -125,20 +88,23 @@ const renderCalendar = () => {
     // == Populates Calendar with previous months dates == //
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
-
+  console.log(new Date().getMonth());
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      //  == Populates calender with todays date == //
-      days += `<div class="today ${months[date.getMonth()] + i}">${i}</div>`;
-    } else if (daysOfMonth[i - 1] === undefined) {
+      // Todays date
+      days += `<div class="today ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       // == Populates Calendar With Dates == //
-      days += `<div class="${months[date.getMonth()] + i}">${i}</div>`;
-      // console.log(daysOfMonth[i - 1].mood);
     } else {
-      days += `<div class="${daysOfMonth[i - 1].mood}">${i}</div>`;
+      days += `<div class="${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
     }
   }
 
@@ -161,4 +127,7 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 
-renderCalendar();
+// //  == selector for current date == //
+// document.querySelector(".today").addEventListener("click", () => {
+//   // on click open modal
+// });

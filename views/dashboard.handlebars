@@ -1,0 +1,110 @@
+<!-- This is the overlay for contact content -->
+<div id="modalUi" onclick="off()">
+    <!-- Include  -->
+</div>
+
+<!-- This is for the navigation logo area -->
+<section id="intPages">
+    <nav>
+        <div class="smLogo">
+            <img src="/assets/images/Vibe-logo.svg" alt="Vibe Logo">
+        </div>
+    </nav>
+    <div>
+        <a href="javascript:on();"><img src="/assets/images/add-icon-button.svg" alt="Record Your Mood"></a>
+    </div>
+</section>
+
+<!-- This is for some text and info -->
+<section id="welcomeText">
+    <div class="smallTitle" id="datetime">
+    </div>
+    <h2>
+        Welcome, {{username}}
+    </h2>
+</section>
+
+<!-- This is the section for logic -->
+<!-- In this section we have two states... -->
+<section id="todayQuery">
+    <!-- 1. Has the user recorded a mood today? -->
+    <p>
+        You haven’t recorded your mood today.
+    </p>
+    <div>
+        <a href="/record" class="bigLink">How are you?</a>
+    </div>
+    <!-- 2. Has the user recorded their mood today? -->
+    <!-- <p>
+        Nice job! You recorded your mood today.
+    </p> -->
+</section>
+
+<!-- This is the section for the Calendar -->
+<section id="moodCalendar">
+    <h1>
+        Mood Calendar
+    </h1>
+    <div class="infoText">
+        Last 30 days
+    </div>
+    <!-- Calendar goes below -->
+    <!-- End of calendar -->
+    <div class="container">
+        <div class="calendar">
+            <div class="header">
+                <div class="vibe"></div>
+            </div>
+            <div class="month">
+            <!-- Previous Month Arrow-->
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
+            </div>
+            <!-- Next Month Arrow-->
+            <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            </div>
+            <div class="days"></div>
+        </div>
+        </div>
+    <!-- Need to include a color scale key below -->
+</section>
+
+<!-- This is the section for the Mood Summary -->
+<section id="moodSummary">
+    <h1>
+        Mood Summary 
+    </h1>
+    <div class="infoText">
+        In the last 30 days
+    </div>
+    {{!-- <ul>
+        <li>You recorded your mood <span class="beBold">{{number of times}}</span>times on <span class="beBold">{{number of days}} d</span>ays.</li>
+        <!-- This is an area that will need conditional logic -->
+        <li>Your current recorded mood is <span class="beBold">{{current mood}} ➞ leaning {{nearest mood}}</span>.</li>
+        <li>You wrote <span class="beBold">{{number of notes}}</span>notes in your mood recordings.</li>
+        <li>You answered <span class="beBold">{{number of feelings}}</span> feeling questions.</li>
+        <li>You uploaded <span class="beBold">{{number of photos}}</span> photos to mood recordings.</li>  
+    </ul> --}}
+</section>
+
+<script type = "text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
+
+<!-- Including Handlebars -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+<!-- Main script file -->
+<script src="/assets/js/scripts.js"></script>
+
+<!-- Calendar JS -->
+<script src="/assets/js/calendar.js"></script>

@@ -1,0 +1,43 @@
+
+<!-- This is for the navigation logo area -->
+<header>
+    <div>
+        <a href="history(-1);" class="backStack">	
+            <!-- <span class="arrowSize">&#8406;</span> -->
+            BACK
+        </a>
+    </div>
+
+    <nav>
+        <img src="/assets/images/Vibe-logo.svg" alt="Vibe Logo">
+    </nav>
+</header>
+
+<!-- This is for some text and info -->
+<section id="introText">
+    <h2>
+        Create Profile
+    </h2>
+    <p>
+        Only two super quick things to do.</p>
+    <p></p>
+</section>
+
+<!-- This is for the form field -->
+<!-- Had to move the form element out of the section -->
+<!-- Wanted to keep the anchoring of the Log in button in CTA section -->
+<form name="loginInfo" id="signup-form">
+    <section id="formsArea">
+        <!-- Field 1 -->
+        <label for="userName">Create username</label>
+        <input type="text" placeholder="Create username" name="userName" id="userName-signup" class="formInput" />
+        <div class="helperText">20 characters or less</div>
+
+        <!-- Field 2 -->
+        <label for="pinNum">Create a pin</label>
+        <input type="pinNum" placeholder="Create a pin" name="pinNum" id="pinNum-signup" class="formInput" />
+        <div class="helperText">6 numbers exactly</div>
+        <input type="submit" value="Sign up" class="formSubmit"/>
+    </section>
+</form>
+<script src="/assets/js/signup.js"></script>
