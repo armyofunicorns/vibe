@@ -51,11 +51,15 @@ const renderCalendar = () => {
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
-
+    console.log(month);
     return [year, month, day].join("-");
   }
 
-  console.log(formatDate(daysOfMonth));
+  let day = "" + new Date().getDate();
+  let tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() - day + 1);
+
+  console.log(day);
 
   const months = [
     "January",
@@ -84,22 +88,23 @@ const renderCalendar = () => {
     // == Populates Calendar with previous months dates == //
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
-
+  console.log(new Date().getMonth());
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      //  == Populates calender with todays date == //
-      days += `<div class="today ${months[date.getMonth()] + i}">${i}</div>`;
-    } else if (daysOfMonth[i - 1] === undefined) {
+      // Todays date
+      days += `<div class="today ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       // == Populates Calendar With Dates == //
-      days += `<div class="${months[date.getMonth()] + i}">${i}</div>`;
-      console.log(daysOfMonth.moodId);
     } else {
-      days += `<div class="${daysOfMonth[i - 1]} + " " + ${
-        daysOfMonth.moodId
-      }">${i}</div>`;
+      days += `<div class="${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
     }
   }
 
