@@ -88,7 +88,7 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 // withAuth
-router.get("/", withAuth, (req, res) => {
+router.get("/", (req, res) => {
   Journal.findAll({
     where: {
       userID: req.session.user_id,

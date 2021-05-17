@@ -122,7 +122,7 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 
-//  == selector for current date == //
-document.querySelector(".today").addEventListener("click", () => {
-  // on click open modal
-});
+// //  == selector for current date == //
+// document.querySelector(".today").addEventListener("click", () => {
+//   // on click open modal
+// });
