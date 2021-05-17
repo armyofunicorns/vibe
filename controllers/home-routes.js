@@ -5,7 +5,7 @@ const { Journal, User, Mood } = require("../models");
 // route for login page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("login");
@@ -14,7 +14,7 @@ router.get("/login", (req, res) => {
 // route for sign up page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("signup");

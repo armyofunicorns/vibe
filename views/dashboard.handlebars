@@ -1,134 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe - Mood Tracker - Dashboard</title>
-    <!-- Favicons -->
-    <!-- <link rel="icon" href="./favicon.png" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
+<!-- This is the overlay for contact content -->
+<div id="modalUi" onclick="off()">
+    <!-- Include  -->
+</div>
 
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="public/assets/css/styles.css" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Arrow Selectors -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-</head>
-<body>
-    <!-- This is the overlay for contact content -->
-    <div id="modalUi" onclick="off()">
-        <!-- Include  -->
+<!-- This is for the navigation logo area -->
+<section id="intPages">
+    <nav>
+        <div class="smLogo">
+            <img src="/assets/images/Vibe-logo.svg" alt="Vibe Logo">
+        </div>
+    </nav>
+    <div>
+        <a href="javascript:on();"><img src="/assets/images/add-icon-button.svg" alt="Record Your Mood"></a>
     </div>
+</section>
 
-    <!-- This is for the navigation logo area -->
-    <section id="intPages">
-        <nav>
-            <div class="smLogo">
-                <img src="public/assets/images/Vibe-logo.svg" alt="Vibe Logo">
+<!-- This is for some text and info -->
+<section id="welcomeText">
+    <div class="smallTitle" id="datetime">
+    </div>
+    <h2>
+        Welcome, {{username}}
+    </h2>
+</section>
+
+<!-- This is the section for logic -->
+<!-- In this section we have two states... -->
+<section id="todayQuery">
+    <!-- 1. Has the user recorded a mood today? -->
+    <p>
+        You haven’t recorded your mood today.
+    </p>
+    <div>
+        <a href="/record" class="bigLink">How are you?</a>
+    </div>
+    <!-- 2. Has the user recorded their mood today? -->
+    <!-- <p>
+        Nice job! You recorded your mood today.
+    </p> -->
+</section>
+
+<!-- This is the section for the Calendar -->
+<section id="moodCalendar">
+    <h1>
+        Mood Calendar
+    </h1>
+    <div class="infoText">
+        Last 30 days
+    </div>
+    <!-- Calendar goes below -->
+    <!-- End of calendar -->
+    <div class="container">
+        <div class="calendar">
+            <div class="header">
+                <div class="vibe"></div>
             </div>
-        </nav>
-        <div>
-            <a href="javascript:on();"><img src="public/assets/images/add-icon-button.svg" alt="Record Your Mood"></a>
-        </div>
-    </section>
-    
-    <!-- This is for some text and info -->
-    <section id="welcomeText">
-        <div class="smallTitle">
-            {{insert date}} {{insert time}}
-        </div>
-        <h2>
-            Welcome, {{insert username}}
-        </h2>
-    </section>
-
-    <!-- This is the section for logic -->
-    <!-- In this section we have two states... -->
-    <section id="todayQuery">
-        <!-- 1. Has the user recorded a mood today? -->
-        <p>
-            You haven’t recorded your mood today.
-        </p>
-        <div>
-            <a href="/record" class="bigLink">How are you?</a>
-        </div>
-        <!-- 2. Has the user recorded their mood today? -->
-        <!-- <p>
-            Nice job! You recorded your mood today.
-        </p> -->
-    </section>
-
-    <!-- This is the section for the Calendar -->
-    <section id="moodCalendar">
-        <h1>
-            Mood Calendar
-        </h1>
-        <div class="infoText">
-            Last 30 days
-        </div>
-        <!-- Calendar goes below -->
-        <!-- End of calendar -->
-        <div class="container">
-            <div class="calendar">
-                <div class="header">
-                    <div class="vibe"></div>
-                </div>
-              <div class="month">
-                <!-- Previous Month Arrow-->
-                <i class="fas fa-angle-left prev"></i>
-                <div class="date">
-                  <h1></h1>
-                  <p></p>
-                </div>
-                <!-- Next Month Arrow-->
-                <i class="fas fa-angle-right next"></i>
-              </div>
-              <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-              </div>
-              <div class="days"></div>
+            <div class="month">
+            <!-- Previous Month Arrow-->
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">
+                <h1></h1>
+                <p></p>
             </div>
-          </div>
-        <!-- Need to include a color scale key below -->
-    </section>
-
-    <!-- This is the section for the Mood Summary -->
-    <section id="moodSummary">
-        <h1>
-           Mood Summary 
-        </h1>
-        <div class="infoText">
-            In the last 30 days
+            <!-- Next Month Arrow-->
+            <i class="fas fa-angle-right next"></i>
+            </div>
+            <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+            </div>
+            <div class="days"></div>
         </div>
-        <ul>
-            <li>You recorded your mood <span class="beBold">{{number of times}}</span>times on <span class="beBold">{{number of days}} d</span>ays.</li>
-            <!-- This is an area that will need conditional logic -->
-            <li>Your current recorded mood is <span class="beBold">{{current mood}} ➞ leaning {{nearest mood}}</span>.</li>
-            <li>You wrote <span class="beBold">{{number of notes}}</span>notes in your mood recordings.</li>
-            <li>You answered <span class="beBold">{{number of feelings}}</span> feeling questions.</li>
-            <li>You uploaded <span class="beBold">{{number of photos}}</span> photos to mood recordings.</li>  
-        </ul>
-    </section>
+        </div>
+    <!-- Need to include a color scale key below -->
+</section>
 
-    <!-- Including Handlebars -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+<!-- This is the section for the Mood Summary -->
+<section id="moodSummary">
+    <h1>
+        Mood Summary 
+    </h1>
+    <div class="infoText">
+        In the last 30 days
+    </div>
+    {{!-- <ul>
+        <li>You recorded your mood <span class="beBold">{{number of times}}</span>times on <span class="beBold">{{number of days}} d</span>ays.</li>
+        <!-- This is an area that will need conditional logic -->
+        <li>Your current recorded mood is <span class="beBold">{{current mood}} ➞ leaning {{nearest mood}}</span>.</li>
+        <li>You wrote <span class="beBold">{{number of notes}}</span>notes in your mood recordings.</li>
+        <li>You answered <span class="beBold">{{number of feelings}}</span> feeling questions.</li>
+        <li>You uploaded <span class="beBold">{{number of photos}}</span> photos to mood recordings.</li>  
+    </ul> --}}
+</section>
 
-    <!-- Main script file -->
-    <script src="public/assets/js/scripts.js"></script>
+<script type = "text/JavaScript" src="https://MomentJS.com/downloads/moment.js"></script>
 
-    <!-- Calendar JS -->
-    <script src="public/assets/js/calendar.js"></script>
-</body>
-</html>
+<!-- Including Handlebars -->
+<script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+<!-- Main script file -->
+<script src="/assets/js/scripts.js"></script>
+
+<!-- Calendar JS -->
+<script src="/assets/js/calendar.js"></script>
