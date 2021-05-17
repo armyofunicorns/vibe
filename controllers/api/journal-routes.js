@@ -50,7 +50,7 @@ router.put('/:id', withAuth, (req, res) => {
         res.status(500).json({ message: 'Failed to update your Note!'})
     });
 });
-
+// withAuth
 router.get('/:id', withAuth, (req, res) => {
     Journal.findOne({
         where: {
