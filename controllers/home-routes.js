@@ -21,7 +21,11 @@ router.get("/signup", (req, res) => {
 });
 
 // add about route
-router.get("/landing", (req, res) => {
+router.get("/", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("dashboard");
+    return;
+  }
   res.render("landing");
 });
 
