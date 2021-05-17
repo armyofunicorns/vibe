@@ -32,4 +32,6 @@ function off() {
     document.getElementById("modalUi").style.display = "none";
 }
 
+document.getElementById("datetime").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+
 

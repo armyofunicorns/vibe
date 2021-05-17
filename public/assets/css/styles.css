@@ -87,6 +87,21 @@ ul li:last-child {
   font-weight: 700;
 }
 
+.formSubmit {
+  font-family: "Domine", sans-serif;
+  color: var(--septenary-color);
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-width: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.formSubmit:hover {
+  opacity: 0.5;
+}
+
 #moodSummary ul {
   display: flex;
   flex-direction: column;
