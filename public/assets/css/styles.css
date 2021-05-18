@@ -429,3 +429,15 @@ div.smLogo img {
 .today {
   background-color: #fdfdfd;
 }
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
