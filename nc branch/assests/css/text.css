@@ -1,0 +1,32 @@
+body{
+	background-color: #fff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.navbar{
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+#Mood1 {
+	background-color: #b8e082;
+}
+
+#Mood2 {
+	background-color: #9bdde8;
+}
+
+#Mood3 {
+	background: color #ffd95e;
+}
+
+#Mood4 {
+	background-color:#f0ab62;
+}
+
+#Mood5 {
+	background-color: #ed6376;
+}
+
+
