@@ -5,7 +5,7 @@ function getDays() {
     .then((r) => r.json())
     .then((r) => {
       daysOfMonth = r;
-      console.log(daysOfMonth[0].moodID);
+      console.log(daysOfMonth[2].moodID);
       renderCalendar();
     });
 }
@@ -91,25 +91,36 @@ const renderCalendar = () => {
     }</div>`;
   }
   console.log(date.getMonth());
+
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      // Todays date
-      days += `<div class="today color${daysOfMonth[i].moodID} ${formatDate(
+      // =================== Current Date
+      days += `<div class="today color${i} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}">${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      // == Populates Calendar With Dates == //
-    } else if (!daysOfMonth[i]) {
+      console.log("today");
+      // ==================== Dates without Mood info
+    } else if (daysOfMonth[i] === undefined) {
       days += `<div class="colorundefined ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}">${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+      console.log("undefined");
+      // ==================== Dates with Mood info
+    } else {
+      days += `<div class="color${daysOfMonth[i - 1].moodID} ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+      console.log(daysOfMonth[i - 1].moodID);
     }
   }
-  console.log(daysOfMonth.moodID);
+
+  console.log(daysOfMonth);
   // pointer-events: none
 
   for (let j = 1; j <= nextDays; j++) {
@@ -119,26 +130,13 @@ const renderCalendar = () => {
   }
 };
 
-// // == cycle to previous month == //
-// document.querySelector(".prev").addEventListener("click", () => {
-//   date.setMonth(date.getMonth() - 1);
-//   renderCalendar();
-// });
-
-// // == cycle to next month == //
-// document.querySelector(".next").addEventListener("click", () => {
-//   date.setMonth(date.getMonth() + 1);
-//   console.log(date.getMonth());
-//   renderCalendar();
-// });
-
 // Fetch Date / Mood info from DB for queryselectors
 function getMoodModal() {
   fetch("/api/journals")
     .then((r) => r.json())
     .then((r) => {
       let journals = r;
-      console.log(journals);
+      console.log(journals[0]);
     });
 }
 getMoodModal();

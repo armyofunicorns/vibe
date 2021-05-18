@@ -19,23 +19,23 @@
 }
 
 /* Amazing */
-.color0 {
+.color1 {
   background-color: var(--primary-color);
 }
 /* Good */
-.color1 {
+.color2 {
   background-color: var(--secondary-color);
 }
 /* Content */
-.color2 {
+.color3 {
   background-color: var(--tertiary-color);
 }
 /* Sad */
-.color3 {
+.color4 {
   background-color: var(--quaternary-color);
 }
 /* Upset */
-.color4 {
+.color5 {
   background-color: var(--quinary-color);
 }
 
@@ -258,20 +258,36 @@ span.arrowSize {
 nav {
   /* border: 1px solid #ED6376; */
 /* } */
-*/ #welcomeText,
-#todayQuery {
+#welcomeText {
+  text-align: center;
+  margin: 50%;
   margin: 4% 12% 4% 12%;
 }
 
-#moodCalendar,
+#todayQuery {
+  text-align: center;
+  margin: 50%;
+  margin: 4% 12% 4% 12%;
+}
+
+#moodCalendar {
+  text-align: center;
+  margin: 50%;
+  margin: 4% 12% 4% 12%;
+}
 #moodSummary {
   margin: 12% 12% 4% 12%;
 }
 
 .smallTitle {
+  text-align: center;
   text-transform: uppercase;
   font-size: 0.85rem;
   font-weight: 400;
+}
+
+.h2 {
+  text-align: center;
 }
 
 .bigLink {
@@ -357,14 +373,9 @@ div.smLogo img {
 
 /* month */
 .month {
-  width: 100%;
-  height: 10rem;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
   text-align: center;
+  margin: 50%;
+  margin: 4% 12% 4% 12%;
   text-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
 }
 

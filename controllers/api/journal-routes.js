@@ -88,11 +88,11 @@ router.get("/:id", withAuth, (req, res) => {
     });
 });
 // withAuth
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   Journal.findAll({
-    // // // where: {
-    // //   userID: req.session.user_id,
-    // },
+    where: {
+      userID: req.session.user_id,
+    },
     attributes: [
       "journalID",
       "journalNote",
