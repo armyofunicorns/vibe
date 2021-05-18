@@ -5,7 +5,8 @@ const withAuth = require('../../utils/auth');
 
 const cdnUrl = 'http://d2rbjfe3250ov1.cloudfront.net/';
 
-router.post('/', withAuth, (req, res) => {
+// withAuth
+router.post('/', (req, res) => {
     let photoUrl;
     if (req.body.photoID) {
         photoUrl = cdnUrl +  req.body.photoID;
@@ -50,7 +51,7 @@ router.put('/:id', withAuth, (req, res) => {
         res.status(500).json({ message: 'Failed to update your Note!'})
     });
 });
-
+// withAuth
 router.get('/:id', withAuth, (req, res) => {
     Journal.findOne({
         where: {

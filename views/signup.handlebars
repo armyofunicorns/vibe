@@ -1,72 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe - Sign Up</title>
-    <!-- Favicons -->
-    <!-- <link rel="icon" href="./favicon.png" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
-    
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="public/assets/css/styles.css" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- This is for the navigation logo area -->
-    <header>
+
+<!-- This is for the navigation logo area -->
+<header>
         <div>
-            <a href="history(-1);" class="backStack">	
+            <a href="/" class="backStack">	
                 <!-- <span class="arrowSize">&#8406;</span> -->
                 BACK
             </a>
         </div>
 
         <nav>
-            <img src="public/assets/images/Vibe-logo.svg" alt="Vibe Logo">
+            <img src="/assets/images/Vibe-logo.svg" alt="Vibe Logo">
         </nav>
     </header>
-    
-    <!-- This is for some text and info -->
-    <section id="introText">
-        <h2>
-            Create Profile
-        </h2>
-        <p>
-            Only two super quick things to do.</p>
-        <p></p>
-    </section>
 
-    <!-- This is for the form field -->
-    <!-- Had to move the form element out of the section -->
-    <!-- Wanted to keep the anchoring of the Log in button in CTA section -->
-    <form action="#" name="loginInfo"></form>
-        <section id="formsArea">
-            <!-- Field 1 -->
-            <label for="userName">Create username</label>
-            <input type="text" placeholder="Create username" name="userName" id="userName-signup" class="formInput" />
-            <div class="helperText">20 characters or less</div>
+<!-- This is for some text and info -->
+<section id="introText">
+    <h2>
+        Sign Up
+    </h2>
+    <p style="padding:0">
+        Let's get your mood on...
+    </p>
+</section>
 
-            <!-- Field 2 -->
-            <label for="pinNum">Create a pin</label>
-            <input type="pinNum" placeholder="Create a pin" name="pinNum" id="pinNum-signup" class="formInput" />
-            <div class="helperText">6 numbers exactly</div>
-        </section>
+<!-- This is for the form field -->
+<section id="formsArea">
+    <form name="loginInfo" id="signup-form"></form>
+    <!-- Field 1 -->
+    <label for="userName">Create username</label>
+    <input type="text" placeholder="Create username" name="userName" id="userName-signup" class="formInput" />
+    <div class="helperText">20 characters or less</div>
 
-        <!-- This is the links -->
-        <section id="ctaLinks">
-            <ul>
-                <li>
-                    <!-- Submit button -->
-                    <a href="/login" onclick="document.forms['loginInfo'].submit(); return false;">Sign up</a>
-                </li>
-            </ul>
-        </section>
+    <!-- Field 2 -->
+    <label for="pinNum">Create a pin</label>
+    <input type="pinNum" placeholder="Create a pin" name="pinNum" id="pinNum-signup" class="formInput" />
+    <div class="helperText">6 numbers exactly</div>
+
+    <!-- Submit button -->
+    <div>
+        <a onclick="document.forms['loginInfo'].submit(); return false;">Submit</a>
+    </div>
+
+    {{!-- <input type="submit" value="Sign up" class="formSubmit"/> --}}
     </form>
-    <script src="public/assets/js/signup.js"></script>
-</body>
-</html>
+</section>
+
+<script src="/assets/js/signup.js"></script>

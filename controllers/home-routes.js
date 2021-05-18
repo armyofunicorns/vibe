@@ -5,7 +5,7 @@ const { Journal, User, Mood } = require("../models");
 // route for login page
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("login");
@@ -14,15 +14,28 @@ router.get("/login", (req, res) => {
 // route for sign up page
 router.get("/signup", (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
   res.render("signup");
 });
 
 // add about route
-router.get("/landing", (req, res) => {
+router.get("/", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("dashboard");
+    return;
+  }
   res.render("landing");
+});
+
+// add about route
+router.get("/about", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("dashboard");
+    return;
+  }
+  res.render("about");
 });
 
 // route for single journal

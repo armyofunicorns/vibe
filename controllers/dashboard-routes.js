@@ -6,6 +6,7 @@ const { Journal, User, Mood} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
+// router.get('/', (req, res) => {
     Journal.findAll({
         where: {
             // use the ID from the session
@@ -25,17 +26,23 @@ router.get('/', withAuth, (req, res) => {
             {
                 model: Mood,
                 attributes: ['moodID', 'title', 'color'],
-            },
-            {
-                model: User,
-                attributes: ['userName']
             }
         ]
     })
         .then(dbJournalData => {
             //serialize data before passing to template
             const journals = dbJournalData.map(journal => journal.get({plain: true}));
-            res.render('dashboard', {journals, loggedIn: true});
+            User.findOne({
+                where: {
+                    userId: req.session.user_id,
+                },
+                attributes: [
+                    'userName',
+                ]
+             })
+             .then((userData) => {
+                res.render('dashboard', {journals, loggedIn: true, username: userData.userName});
+             });
         })
         .catch(err => {
             console.log(err);
