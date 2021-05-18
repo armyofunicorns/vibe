@@ -11,6 +11,7 @@
         </div>
     </nav>
     <div>
+        <button id="logout" class="btn-no-style">logout</button>
         <a href="javascript:on();"><img src="/assets/images/add-icon-button.svg" alt="Record Your Mood"></a>
     </div>
 </section>
@@ -20,7 +21,7 @@
     <div class="smallTitle" id="datetime">
     </div>
     <h2>
-        Welcome, {{username}}
+        Welcome, {{username}} 
     </h2>
 </section>
 
@@ -56,14 +57,10 @@
                 <div class="vibe"></div>
             </div>
             <div class="month">
-            <!-- Previous Month Arrow-->
-            <i class="fas fa-angle-left prev"></i>
             <div class="date">
                 <h1></h1>
                 <p></p>
             </div>
-            <!-- Next Month Arrow-->
-            <i class="fas fa-angle-right next"></i>
             </div>
             <div class="weekdays">
             <div>Sun</div>
@@ -108,3 +105,6 @@
 
 <!-- Calendar JS -->
 <script src="/assets/js/calendar.js"></script>
+
+{{!-- logout script --}}
+<script src="/assets/js/logout.js"></script>

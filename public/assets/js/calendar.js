@@ -5,7 +5,7 @@ function getDays() {
     .then((r) => r.json())
     .then((r) => {
       daysOfMonth = r;
-      console.log(daysOfMonth);
+      console.log(daysOfMonth[2].moodID);
       renderCalendar();
     });
 }
@@ -51,7 +51,7 @@ const renderCalendar = () => {
 
     if (month.length < 2) month = "0" + month;
     if (day.length < 2) day = "0" + day;
-    console.log(month);
+    // console.log(month);
     return [year, month, day].join("-");
   }
 
@@ -59,7 +59,7 @@ const renderCalendar = () => {
   let tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() - day + 1);
 
-  console.log(day);
+  console.log();
 
   const months = [
     "January",
@@ -86,48 +86,95 @@ const renderCalendar = () => {
 
   for (let x = firstDayIndex; x > 0; x--) {
     // == Populates Calendar with previous months dates == //
-    days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
+    days += `<div class="prev-date colorundefined">${
+      prevLastDay - x + 1
+    }</div>`;
   }
-  console.log(new Date().getMonth());
+  console.log(date.getMonth());
+
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      // Todays date
-      days += `<div class="today ${formatDate(
+      // =================== Current Date
+      days += `<div class="today color${i} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}">${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      // == Populates Calendar With Dates == //
+      console.log("today");
+      // ==================== Dates without Mood info
+    } else if (daysOfMonth[i] === undefined) {
+      days += `<div class="colorundefined ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+      console.log("undefined");
+      // ==================== Dates with Mood info
     } else {
-      days += `<div class="${formatDate(
+      days += `<div class="color${daysOfMonth[i - 1].moodID} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}">${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+      console.log(daysOfMonth[i - 1].moodID);
     }
   }
 
+  console.log(daysOfMonth);
+  // pointer-events: none
+
   for (let j = 1; j <= nextDays; j++) {
     //  == populates calender with next months dates == //
-    days += `<div class="next-date">${j}</div>`;
+    days += `<div class="next-date colorundefined">${j}</div>`;
     monthDays.innerHTML = days;
   }
 };
 
-// == cycle to previous month == //
-document.querySelector(".prev").addEventListener("click", () => {
-  date.setMonth(date.getMonth() - 1);
-  renderCalendar();
-});
+// Fetch Date / Mood info from DB for queryselectors
+function getMoodModal() {
+  fetch("/api/journals")
+    .then((r) => r.json())
+    .then((r) => {
+      let journals = r;
+      console.log(journals[0]);
+    });
+}
+getMoodModal();
 
-// == cycle to next month == //
-document.querySelector(".next").addEventListener("click", () => {
-  date.setMonth(date.getMonth() + 1);
-  renderCalendar();
-});
+// Query selectors for Today
+document.querySelector(".bigLink").addEventListener("click", () => {});
 
-// //  == selector for current date == //
-// document.querySelector(".today").addEventListener("click", () => {
-//   // on click open modal
-// });
+document.querySelector(".today").addEventListener("click", () => {});
+
+// Query Selectors for days of month
+document.querySelector(".2021-05-01").addEventListener("click", () => {});
+document.querySelector(".2021-05-02").addEventListener("click", () => {});
+document.querySelector(".2021-05-03").addEventListener("click", () => {});
+document.querySelector(".2021-05-04").addEventListener("click", () => {});
+document.querySelector(".2021-05-05").addEventListener("click", () => {});
+document.querySelector(".2021-05-06").addEventListener("click", () => {});
+document.querySelector(".2021-05-07").addEventListener("click", () => {});
+document.querySelector(".2021-05-08").addEventListener("click", () => {});
+document.querySelector(".2021-05-09").addEventListener("click", () => {});
+document.querySelector(".2021-05-10").addEventListener("click", () => {});
+document.querySelector(".2021-05-11").addEventListener("click", () => {});
+document.querySelector(".2021-05-12").addEventListener("click", () => {});
+document.querySelector(".2021-05-13").addEventListener("click", () => {});
+document.querySelector(".2021-05-14").addEventListener("click", () => {});
+document.querySelector(".2021-05-15").addEventListener("click", () => {});
+document.querySelector(".2021-05-16").addEventListener("click", () => {});
+document.querySelector(".2021-05-17").addEventListener("click", () => {});
+document.querySelector(".2021-05-18").addEventListener("click", () => {});
+document.querySelector(".2021-05-19").addEventListener("click", () => {});
+document.querySelector(".2021-05-20").addEventListener("click", () => {});
+document.querySelector(".2021-05-21").addEventListener("click", () => {});
+document.querySelector(".2021-05-22").addEventListener("click", () => {});
+document.querySelector(".2021-05-23").addEventListener("click", () => {});
+document.querySelector(".2021-05-24").addEventListener("click", () => {});
+document.querySelector(".2021-05-25").addEventListener("click", () => {});
+document.querySelector(".2021-05-26").addEventListener("click", () => {});
+document.querySelector(".2021-05-27").addEventListener("click", () => {});
+document.querySelector(".2021-05-28").addEventListener("click", () => {});
+document.querySelector(".2021-05-29").addEventListener("click", () => {});
+document.querySelector(".2021-05-30").addEventListener("click", () => {});
+document.querySelector(".2021-05-31").addEventListener("click", () => {});
