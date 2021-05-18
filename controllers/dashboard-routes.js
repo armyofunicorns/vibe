@@ -6,6 +6,7 @@ const { Journal, User, Mood} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, (req, res) => {
+// router.get('/', (req, res) => {
     Journal.findAll({
         where: {
             // use the ID from the session

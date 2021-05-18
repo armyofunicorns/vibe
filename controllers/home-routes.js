@@ -29,6 +29,15 @@ router.get("/", (req, res) => {
   res.render("landing");
 });
 
+// add about route
+router.get("/about", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("dashboard");
+    return;
+  }
+  res.render("about");
+});
+
 // route for single journal
 router.get("/journal/:id", (req, res) => {
   Journal.findOne({

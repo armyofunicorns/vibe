@@ -8,10 +8,10 @@ let moodChoices = [
         'Sad', 2, './assets/images/mood-2-v4.svg','--quaternary-color'
     ],
     [
-        'Content', 3, './assets/images/mood-3-v4.svg','--tertiary-color'
+        'So So', 3, './assets/images/mood-3-v4.svg','--tertiary-color'
     ],
     [
-        'Good', 4, './assets/images/mood-4-v4.svg',' --secondary-color'
+        'Good', 4, './assets/images/mood-4-v4.svg','--secondary-color'
     ],
     [
         'Amazing', 5, './assets/images/mood-5-v4.svg','--primary-color'
