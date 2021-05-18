@@ -17,6 +17,31 @@
   --septenary-color: #474747;
   --octonary-color: #d1d1d1;
 }
+
+/* Amazing */
+.color0 {
+  background-color: var(--primary-color);
+}
+/* Good */
+.color1 {
+  background-color: var(--secondary-color);
+}
+/* Content */
+.color2 {
+  background-color: var(--tertiary-color);
+}
+/* Sad */
+.color3 {
+  background-color: var(--quaternary-color);
+}
+/* Upset */
+.color4 {
+  background-color: var(--quinary-color);
+}
+
+.colorundefined {
+  pointer-events: none;
+}
 /* Global Styles */
 body {
   color: var(--septenary-color);
@@ -427,5 +452,5 @@ div.smLogo img {
 
 /* color of current day */
 .today {
-  background-color: #fdfdfd;
+  background-color: #d8eeff;
 }
