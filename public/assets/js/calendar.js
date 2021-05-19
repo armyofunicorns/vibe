@@ -119,11 +119,11 @@ const renderCalendar = () => {
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       // ==================== Dates with Mood info
     } else {
-      days += `<div class="color${daysToJournal[i - 1].moodID} ${formatDate(
+      days += `<div class="color${daysToJournal[i].moodID} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}" onclick='renderJournal(${daysToJournal[i].journalID})'>${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      console.log(daysToJournal[i - 1].moodID);
+      console.log(daysToJournal[i].moodID);
     }
   }
   // pointer-events: none
