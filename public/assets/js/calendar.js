@@ -104,10 +104,11 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
+      const renderEvent = daysToJournal[i] ? `onclick='renderJournal(${daysToJournal[i].journalID})'` : ''
       // =================== Current Date
       days += `<div class="today color${i} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
-      )}" onclick='renderJournal(${daysToJournal[i].journalID})'>${i}</div>`;
+      )}" ${renderEvent}>${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       console.log("today");
       // ==================== Dates without Mood info
