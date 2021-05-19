@@ -56,7 +56,7 @@ async function submitJournal() {
         photoID: imgId,
         moodID: parseInt(selectedMood),
         journalNote: journalText,
-        date: date,
+        date: "2021-05-17",
     }
 
     const resp = await fetch("/api/journals", {
