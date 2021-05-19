@@ -342,7 +342,7 @@
   }
   
   header div {
-    margin: 4% 24% 4% 24%;
+    margin: 4% 12% 4% 12%;
   }
 
   header nav img {
@@ -369,17 +369,20 @@
     margin: 0 24% 4% 24%;
   }
 
+  #intPages {
+    padding: 8% 12%;
+  }
+
+  
 }
 
 @media only screen and (min-width: 1280px) {
   #introText {
-    width: 48%;
+    width: 36%;
   }
 
 }
 
 @media only screen and (min-width: 1440px) {
-    #introText {
-        width: 36%;
-    }
+
 }
