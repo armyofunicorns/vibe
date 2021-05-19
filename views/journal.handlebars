@@ -1,74 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vibe - Mood Tracker - Detail</title>
-    <!-- Favicons -->
-    <!-- <link rel="icon" href="./favicon.png" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" /> -->
 
-    <!-- Main script file -->
-    <script src="public/assets/js/scripts.js"></script>
-    
-    <!-- Main stylesheet -->
-    <link rel="stylesheet" href="public/assets/css/styles.css" />
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<!-- Change the background of the page -->
 
-    <!-- Change the background of the page -->
-    <script>
-        window.onload = function() {
-            // Declare my mood settings
-            let newBgColor = moodChoices[2][3];
-            let newMoodTitle = moodChoices[2][0];
-            let newMoodNum = moodChoices[2][1];
-
-            // Update the background of the page
-            changePageBackColor(newBgColor);
-            // Update the values based on the mood
-            document.getElementById('moodIcon').innerHTML = '<img src="public/assets/images/mood-' + newMoodNum + '-v4.svg"/>';
-            document.getElementById('moodTitle').innerHTML = String(newMoodTitle);
-        };       
-    </script>
-</head>
 <body>
-    <!-- This is for the navigation logo area -->
-    <section id="intPages">
-        <nav>
-            <div class="smLogo">
-                <img src="public/assets/images/Vibe-logo.svg" alt="Vibe Logo">
-            </div>
-        </nav>
-    </section>
-    
-    <!-- This is for some text and info -->
-    <section id="welcomeText">
-        <div class="smallTitle">
-            {{insert date}}
+<!-- This is for the navigation logo area -->
+<section id="intPages">
+    <nav>
+        <div class="smLogo">
+            <img src="/assets/images/Vibe-logo.svg" alt="Vibe Logo">
         </div>
-        <h1>
-            Day In Review
-        </h1>
-        <!-- This is the section for mood -->
-        <!-- Five mood choices: 5 Amazing,  -->
-        <div>
-            <div id="moodIcon"></div>
-            <div id="moodTitle"></div>
-        </div>
-    </section>
+    </nav>
+</section>
 
-    <section>
+<!-- This is for some text and info -->
+<section id="welcomeText">
+    <div class="smallTitle">
+        date placeholder
+    </div>
+    <h1>
+        Day In Review
+    </h1>
+    <!-- This is the section for mood -->
+    <div>
+        <div id="moodIcon"></div>
+        <div id="moodTitle"></div>
+    </div>
+</section>
 
-    </section>
- 
-
-    <!-- Including Handlebars -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
-    
-</body>
-</html>
+<section id="postArea">
+    <div id="postTime">
+        <h2>{{date}}</h2>
+    </div>
+    <h2>Heres what you had to say on that day...</h2>
+    <div id="postComment">{{journalNote}}</div>
+    <div id="postImage">
+        <img class="imageUrl" src={{photoUrl}} height="300px" width="300px"/>
+    </div>
+</section>
+<script>
+    window.onload = function() {
+        // Declare my mood settings
+        let newBgColor = moodChoices[4][3];
+        let newMoodTitle = moodChoices[4][0];
+        let newMoodNum = moodChoices[4][1];
+        // Update the background of the page
+        changePageBackColor(newBgColor);
+        // Update the values based on the mood
+        document.getElementById('moodIcon').innerHTML = '<img src="public/assets/images/mood-' + newMoodNum + '-v4.svg"/>';
+        document.getElementById('moodTitle').innerHTML = String(newMoodTitle);
+    };       
+</script>

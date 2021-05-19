@@ -552,3 +552,13 @@ div.smLogo img {
   cursor: pointer;
 }
 
+#postArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageUrl {
+  object-fit: scale-down;
+  margin-top: 60px;
+}

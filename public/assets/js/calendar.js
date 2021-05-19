@@ -92,6 +92,13 @@ const renderCalendar = () => {
   }
   console.log(date.getMonth());
 
+  const daysToJournal = {}
+  for (let i = 0; i < daysOfMonth.length; i++) {
+    const journal = daysOfMonth[i];
+    daysToJournal[journal.date.split("-")[2]] = journal;
+  }
+  console.log(daysToJournal);
+
   for (let i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
@@ -100,27 +107,24 @@ const renderCalendar = () => {
       // =================== Current Date
       days += `<div class="today color${i} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
-      )}">${i}</div>`;
+      )}" onclick='renderJournal(${daysToJournal[i].journalID})'>${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       console.log("today");
       // ==================== Dates without Mood info
-    } else if (daysOfMonth[i] === undefined) {
+    } else if (daysToJournal[i] === undefined) {
       days += `<div class="colorundefined ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}">${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      console.log("undefined");
       // ==================== Dates with Mood info
     } else {
-      days += `<div class="color${daysOfMonth[i - 1].moodID} ${formatDate(
+      days += `<div class="color${daysToJournal[i - 1].moodID} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
-      )}">${i}</div>`;
+      )}" onclick='renderJournal(${daysToJournal[i].journalID})'>${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      console.log(daysOfMonth[i - 1].moodID);
+      console.log(daysToJournal[i - 1].moodID);
     }
   }
-
-  console.log(daysOfMonth);
   // pointer-events: none
 
   for (let j = 1; j <= nextDays; j++) {
@@ -129,6 +133,10 @@ const renderCalendar = () => {
     monthDays.innerHTML = days;
   }
 };
+
+function renderJournal(journalID) {
+  document.location.replace(`/journals/${journalID}`);
+}
 
 // Fetch Date / Mood info from DB for queryselectors
 function getMoodModal() {
@@ -144,37 +152,37 @@ getMoodModal();
 // Query selectors for Today
 document.querySelector(".bigLink").addEventListener("click", () => {});
 
-document.querySelector(".today").addEventListener("click", () => {});
+//document.querySelector(".today").addEventListener("click", () => {});
 
 // Query Selectors for days of month
-document.querySelector(".2021-05-01").addEventListener("click", () => {});
-document.querySelector(".2021-05-02").addEventListener("click", () => {});
-document.querySelector(".2021-05-03").addEventListener("click", () => {});
-document.querySelector(".2021-05-04").addEventListener("click", () => {});
-document.querySelector(".2021-05-05").addEventListener("click", () => {});
-document.querySelector(".2021-05-06").addEventListener("click", () => {});
-document.querySelector(".2021-05-07").addEventListener("click", () => {});
-document.querySelector(".2021-05-08").addEventListener("click", () => {});
-document.querySelector(".2021-05-09").addEventListener("click", () => {});
-document.querySelector(".2021-05-10").addEventListener("click", () => {});
-document.querySelector(".2021-05-11").addEventListener("click", () => {});
-document.querySelector(".2021-05-12").addEventListener("click", () => {});
-document.querySelector(".2021-05-13").addEventListener("click", () => {});
-document.querySelector(".2021-05-14").addEventListener("click", () => {});
-document.querySelector(".2021-05-15").addEventListener("click", () => {});
-document.querySelector(".2021-05-16").addEventListener("click", () => {});
-document.querySelector(".2021-05-17").addEventListener("click", () => {});
-document.querySelector(".2021-05-18").addEventListener("click", () => {});
-document.querySelector(".2021-05-19").addEventListener("click", () => {});
-document.querySelector(".2021-05-20").addEventListener("click", () => {});
-document.querySelector(".2021-05-21").addEventListener("click", () => {});
-document.querySelector(".2021-05-22").addEventListener("click", () => {});
-document.querySelector(".2021-05-23").addEventListener("click", () => {});
-document.querySelector(".2021-05-24").addEventListener("click", () => {});
-document.querySelector(".2021-05-25").addEventListener("click", () => {});
-document.querySelector(".2021-05-26").addEventListener("click", () => {});
-document.querySelector(".2021-05-27").addEventListener("click", () => {});
-document.querySelector(".2021-05-28").addEventListener("click", () => {});
-document.querySelector(".2021-05-29").addEventListener("click", () => {});
-document.querySelector(".2021-05-30").addEventListener("click", () => {});
-document.querySelector(".2021-05-31").addEventListener("click", () => {});
+// document.querySelector(".2021-05-01").addEventListener("click", () => {});
+// document.querySelector(".2021-05-02").addEventListener("click", () => {});
+// document.querySelector(".2021-05-03").addEventListener("click", () => {});
+// document.querySelector(".2021-05-04").addEventListener("click", () => {});
+// document.querySelector(".2021-05-05").addEventListener("click", () => {});
+// document.querySelector(".2021-05-06").addEventListener("click", () => {});
+// document.querySelector(".2021-05-07").addEventListener("click", () => {});
+// document.querySelector(".2021-05-08").addEventListener("click", () => {});
+// document.querySelector(".2021-05-09").addEventListener("click", () => {});
+// document.querySelector(".2021-05-10").addEventListener("click", () => {});
+// document.querySelector(".2021-05-11").addEventListener("click", () => {});
+// document.querySelector(".2021-05-12").addEventListener("click", () => {});
+// document.querySelector(".2021-05-13").addEventListener("click", () => {});
+// document.querySelector(".2021-05-14").addEventListener("click", () => {});
+// document.querySelector(".2021-05-15").addEventListener("click", () => {});
+// document.querySelector(".2021-05-16").addEventListener("click", () => {});
+// document.querySelector(".2021-05-17").addEventListener("click", () => {});
+// document.querySelector(".2021-05-18").addEventListener("click", () => {});
+// document.querySelector(".2021-05-19").addEventListener("click", () => {});
+// document.querySelector(".2021-05-20").addEventListener("click", () => {});
+// document.querySelector(".2021-05-21").addEventListener("click", () => {});
+// document.querySelector(".2021-05-22").addEventListener("click", () => {});
+// document.querySelector(".2021-05-23").addEventListener("click", () => {});
+// document.querySelector(".2021-05-24").addEventListener("click", () => {});
+// document.querySelector(".2021-05-25").addEventListener("click", () => {});
+// document.querySelector(".2021-05-26").addEventListener("click", () => {});
+// document.querySelector(".2021-05-27").addEventListener("click", () => {});
+// document.querySelector(".2021-05-28").addEventListener("click", () => {});
+// document.querySelector(".2021-05-29").addEventListener("click", () => {});
+// document.querySelector(".2021-05-30").addEventListener("click", () => {});
+// document.querySelector(".2021-05-31").addEventListener("click", () => {});
