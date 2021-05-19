@@ -1,6 +1,24 @@
 <!-- This is the overlay for contact content -->
-<div id="modalUi" onclick="off()">
-    <!-- Include  -->
+<div id="modalUi">
+    <div class="modal_container">
+        <a id="close_modal" href="javascript:off();">x</a>
+        <h2>{{username}},</h2>
+        <h2>How are you feeling?</h2>
+        <select name="moods" id="mood_selector">
+            <!-- TODO: pull these values from the api -->
+            <option value="1">joyful, happy, relaxed</option>
+            <option value="2">sad, lonely, depressed</option>
+            <option value="3">productive, energetic, active</option>
+            <option value="4">sick, tired, lazy</option>
+            <option value="5">average, normal, good</option>
+            <option value="6">angry, anxious, frustrated</option>
+        </select>
+        <h2>Would you like to expand on how you're feeling?</h2>
+        <textarea id="journal_text"></textarea>
+        <h2>Do you want to upload a photo about your day?</h2>
+        <input type="file" id="journal_img" accept="image/*"/>
+        <button id="submit_journal_btn" onclick="submitJournal()">Submit</button>
+    </div>
 </div>
 
 <!-- This is for the navigation logo area -->
