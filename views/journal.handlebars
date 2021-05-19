@@ -33,7 +33,9 @@
     <h2>Heres what you had to say on that day...</h2>
     <div id="postComment">{{journalNote}}</div>
     <div id="postImage">
+        {{#if photoUrl}}
         <img class="imageUrl" src={{photoUrl}} height="300px" width="300px"/>
+        {{/if}}
     </div>
 </section>
 <script>
