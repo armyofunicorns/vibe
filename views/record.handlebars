@@ -1,0 +1,52 @@
+<!-- This is for the navigation logo area -->
+    <section id="intPages">
+        <nav>
+            <div class="smLogo">
+                <img src="./assets/images/Vibe-logo.svg" alt="Vibe Logo">
+            </div>
+        </nav>
+        <div>
+            <a href="javascript:off();"><img src="./assets/images/close-icon-button.svg" alt="Close Modal"></a>
+        </div>
+    </section>
+    
+    <!-- This is for some text and info -->
+    <section id="welcomeText">
+        <div class="smallTitle">
+            {{insert date}} {{insert time}}
+        </div>
+        <h2>
+            Record Your Mood
+        </h2>
+        <p>
+            Select your mood right now.
+        </p>
+    </section>
+    
+    <!-- This is where the user selects the icon -->
+    <form action="#" name="moodChoiceInfo"></form>
+        <section id="moodMagic">
+            <div class="moodChoiceIcon1"><input type='radio' name='amazingMood' value='valuable' id="amazingMood"/>
+                <label for="amazingMood"></label></div>
+            <div class="moodChoiceIcon2"><input type='radio' name='goodMood' value='valuable' id="goodMood"/>
+                <label for="goodMood"></label></div>
+            <div class="moodChoiceIcon3"><input type='radio' name='sosoMood' value='valuable' id="sosoMood"/>
+                <label for="sosoMood"></label></div>
+            <div class="moodChoiceIcon4"><input type='radio' name='sadMood' value='valuable' id="sadMood"/>
+                <label for="sadMood"></label></div>
+            <div class="moodChoiceIcon5"><input type='radio' name='angryMood' value='valuable' id="angryMood"/>
+                <label for="angryMood"></label></div>
+        </section>
+
+        <section id="moodJournal">
+            <div>
+                <label for="moodComment">Add a note</label>
+                <textarea name="moodComment" id="moodComment" placeholder="Start here..." cols="30" rows="10"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <div>
+                <a href="/record" onclick="document.forms['moodChoiceInfo'].submit(); return false;">Submit</a>
+            </div>
+        </section>
+    </form>

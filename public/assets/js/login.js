@@ -1,12 +1,10 @@
-
-
 async function loginFormHandler(event) {
   event.preventDefault();
 
   const login = document.querySelector("#userName").value.trim();
   const password = document.querySelector("#pinNum").value.trim();
 
-  console.log(login);
+  console.log('login:' + login);
 
   if (login && password) {
     const response = await fetch("/api/users/login", {
@@ -19,7 +17,7 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/dashboard");
+      document.location.replace("/dashboard/");
     } else {
       alert(response.statusText);
     }

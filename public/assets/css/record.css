@@ -1,0 +1,152 @@
+/* These are the styles for the Record Journal modal */
+
+#moodMagic {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    overflow: hidden;
+  }
+
+  .moodChoiceIcon input {
+    width: 100px;
+  }
+
+  .moodChoiceIcon input:hover {
+    opacity: .5;
+  }
+
+  .moodChoiceInnerIcon input:checked+img {
+    border: 1px solid #474747;
+  }
+
+  #moodJournal {
+    margin: 8% 12% 0 12%;
+  }
+
+  #moodJournal div:last-child {
+    padding-top: 2rem;
+  }
+
+ .moodChoiceIcon1 input[type=radio] {
+    display:none;
+  }
+  
+  .moodChoiceIcon1 input[type=radio] + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352202/vibe/mood-5-v4c_egtxbi.svg');
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon1 input[type=radio]:checked + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352202/vibe/mood-5-v4c_egtxbi.svg');
+    border: 2px solid #ED6376;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon2 input[type=radio] {
+    display:none;
+  }
+  
+  .moodChoiceIcon2 input[type=radio] + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352202/vibe/mood-4-v4c_l3awmu.svg');
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon2 input[type=radio]:checked + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352202/vibe/mood-4-v4c_l3awmu.svg');
+    border: 2px solid #ED6376;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon3 input[type=radio] {
+    display:none;
+  }
+  
+  .moodChoiceIcon3 input[type=radio] + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352200/vibe/mood-3-v4c_v9mknf.svg');
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon3 input[type=radio]:checked + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352200/vibe/mood-3-v4c_v9mknf.svg');
+    border: 2px solid #ED6376;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon4 input[type=radio] {
+    display:none;
+  }
+  
+  .moodChoiceIcon4 input[type=radio] + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352199/vibe/mood-2-v4c_sjdqjf.svg');
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon4 input[type=radio]:checked + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352199/vibe/mood-2-v4c_sjdqjf.svg');
+    border: 2px solid #ED6376;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon5 input[type=radio] {
+    display:none;
+  }
+  
+  .moodChoiceIcon5 input[type=radio] + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352199/vibe/mood-1-v4c_kvktaa.svg');
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  .moodChoiceIcon5 input[type=radio]:checked + label {
+    background-image: url('https://res.cloudinary.com/daginzisw/image/upload/v1621352199/vibe/mood-1-v4c_kvktaa.svg');
+    border: 2px solid #ED6376;
+    height: 100px;
+    width: 100px;
+    display:inline-block;
+    padding: 0;
+    border-radius: 50px;
+  }
+
+  textarea {
+    outline: none;
+    border: 0;
+    overflow: auto;
+    width: 100%;
+  }

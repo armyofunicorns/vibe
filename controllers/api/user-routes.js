@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User } = require('../../models');
 
 router.post('/', (req, res) => {
+    console.log('got here');
     User.create({
         userName: req.body.userName,
         password: req.body.password
