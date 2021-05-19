@@ -32,6 +32,45 @@ function off() {
     document.getElementById("modalUi").style.display = "none";
 }
 
+async function submitJournal() {
+    const fileList = document.getElementById("journal_img").files;
+    let imgId = undefined;
+    if (fileList.length > 0) {
+        formData = new FormData();
+        formData.append('photo', fileList[0]);
+        // upload image
+        const upload_resp = await fetch("/api/photos", {
+            method: "post",
+            body: formData,
+        })
+        if (upload_resp.ok) {
+            const resp_body = await upload_resp.json();
+            imgId = resp_body.photoId;
+        }
+    }
+    const selectedMood = document.getElementById("mood_selector").value;
+    const journalText = document.getElementById("journal_text").value;
+
+    const date = moment().format("YYYY-MM-DD");
+    const req_body = {
+        photoID: imgId,
+        moodID: parseInt(selectedMood),
+        journalNote: journalText,
+        date: date,
+    }
+
+    const resp = await fetch("/api/journals", {
+        method: "post",
+        body: JSON.stringify(req_body),
+        headers: {"Content-Type": "application/json"},
+    });
+
+    if (resp.ok) {
+        console.log(await resp.json());
+    }
+    off();
+}
+
 document.getElementById("datetime").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
 
 

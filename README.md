@@ -1,16 +1,22 @@
-# Vibe Mood Tracker
+# Vibe Mood Tracker 
 Link to Application: https://armyofunicorns.github.io/vibe/
 
-Need a statement about what the app does and the primary features.
+## Description
+As  Full-Stack Web Developers, we wanted to create a tool to help individuals prioritize their mental well-being, by allowing them to track their mood daily and complete journal entries with predetermined questions. Each day the user will be able to select their mood for the day, add a journal entry, add a photo and submit for tracking. 
 
-## Code Description
-Need a description...
+![Application screenshot](.blahblah.gif--when available)
 
-## Overview
-Need stuff here
+## Table of Contents
+* [Title](#Title)
+* [Description](#Description)
+* [Usage](#Usage)
+* [Contributing](#Contributing)
 
-## PHOTOS OF APPLICATION 
+## Usage
+Follow the sign-up instructions to create your personal account and start tracking your mood.
 
+## Contributors
+Anthony Hall, George Wise, Nichole Christianson, Shirin Shahram, Zhypara Abdieva
 
 
 
