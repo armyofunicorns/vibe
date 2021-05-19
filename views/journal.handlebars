@@ -3,9 +3,9 @@
     <script>
         window.onload = function() {
             // Declare my mood settings
-            let newBgColor = moodChoices[2][3];
-            let newMoodTitle = moodChoices[2][0];
-            let newMoodNum = moodChoices[2][1];
+            let newBgColor = moodChoices[4][3];
+            let newMoodTitle = moodChoices[4][0];
+            let newMoodNum = moodChoices[4][1];
 
             // Update the background of the page
             changePageBackColor(newBgColor);
@@ -37,4 +37,10 @@
             <div id="moodIcon"></div>
             <div id="moodTitle"></div>
         </div>
+    </section>
+    
+    <section id="postArea">
+        <div id="postTime">{{createdAt}}</div>
+        <div id="postComment">{{journalNote}}</div>
+        <div id="postImage">{{photoUrl}}</div>
     </section>
