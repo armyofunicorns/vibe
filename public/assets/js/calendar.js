@@ -5,7 +5,7 @@ function getDays() {
     .then((r) => r.json())
     .then((r) => {
       daysOfMonth = r;
-      console.log(daysOfMonth[2].moodID);
+      // console.log(daysOfMonth[2].moodID);
       renderCalendar();
     });
 }
