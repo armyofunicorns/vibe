@@ -10,14 +10,26 @@ As  Full-Stack Web Developers, we wanted to create a tool to help individuals pr
 * [Title](#Title)
 * [Description](#Description)
 * [Usage](#Usage)
+* [Screenshots](#screenshots)
 * [Contributing](#Contributing)
 
 ## Usage
 Follow the sign-up instructions to create your personal account and start tracking your mood.
 
+## Screenshots
+
+Please see below for two snapshots of this website:
+
+* Dashboard
+
+![alt=dashboard](./public/assets/images/dashboard.JPG)
+
+* Landing Page
+
+![alt=landing-page](./public/assets/images/landing-page.JPG)
+
 ## Contributors
 Anthony Hall, George Wise, Nichole Christianson, Shirin Shahram, Zhypara Abdieva
-
 
 
 
