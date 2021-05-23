@@ -1,5 +1,5 @@
 # Vibe Mood Tracker 
-Link to Application: https://armyofunicorns.github.io/vibe/
+Link to Application: https://pacific-lake-95898.herokuapp.com/
 
 ## Description
 As  Full-Stack Web Developers, we wanted to create a tool to help individuals prioritize their mental well-being, by allowing them to track their mood daily and complete journal entries with predetermined questions. Each day the user will be able to select their mood for the day, add a journal entry, add a photo and submit for tracking. 
