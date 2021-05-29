@@ -69,6 +69,7 @@ async function submitJournal() {
         console.log(await resp.json());
     }
     off();
+    document.location.replace('/dashboard');
 }
 
 document.getElementById("datetime").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');

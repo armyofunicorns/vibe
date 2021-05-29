@@ -100,30 +100,30 @@ const renderCalendar = () => {
   console.log(daysToJournal);
 
   for (let i = 1; i <= lastDay; i++) {
-    if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
-    ) {
-      const renderEvent = daysToJournal[i] ? `onclick='renderJournal(${daysToJournal[i].journalID})'` : ''
-      // =================== Current Date
-      days += `<div class="today color${i} ${formatDate(
-        tomorrow.setDate(tomorrow.getDate())
-      )}" ${renderEvent}>${i}</div>`;
-      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
-      console.log("today");
-      // ==================== Dates without Mood info
-    } else if (daysToJournal[i] === undefined) {
-      days += `<div class="colorundefined ${formatDate(
-        tomorrow.setDate(tomorrow.getDate())
-      )}">${i}</div>`;
-      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+    if (daysToJournal[i]) { 
       // ==================== Dates with Mood info
-    } else {
       days += `<div class="color${daysToJournal[i].moodID} ${formatDate(
         tomorrow.setDate(tomorrow.getDate())
       )}" onclick='renderJournal(${daysToJournal[i].journalID})'>${i}</div>`;
       formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
       console.log(daysToJournal[i].moodID);
+    } else if (
+      i === new Date().getDate() &&
+      date.getMonth() === new Date().getMonth()
+    ) { 
+      // =================== Current Date
+      const renderEvent = daysToJournal[i] ? `onclick='renderJournal(${daysToJournal[i].journalID})'` : ''
+      days += `<div class="today color${i} ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}" ${renderEvent}>${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
+      console.log("today");
+    } else {
+      // ==================== Dates without Mood info
+      days += `<div class="colorundefined ${formatDate(
+        tomorrow.setDate(tomorrow.getDate())
+      )}">${i}</div>`;
+      formatDate(tomorrow.setDate(tomorrow.getDate() + 1));
     }
   }
   // pointer-events: none
